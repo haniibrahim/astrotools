@@ -4,8 +4,8 @@ function AT_astroconst()
     
     //General constants
     gen = struct( ..
-        "G", 6.67408D-11, ..    // Gravitationskonstante in m³/(kg*s²) oder in Nm²/kg²
-        "c", 299792458, ..      // Lichtgeschwindigkeit im Vacuum in m/s
+        "G", 6.67408D-11, ..    // Gravity constant in m³/(kg*s²) or in Nm²/kg²
+        "c", 299792458, ..      // lightspeed in vacuum in m/s
         "", 0 ..
     );
     
@@ -27,22 +27,24 @@ function AT_astroconst()
         "", 0 .. 
     );
     // Moon constants
-//    moon = struct( .. 
-//        "mass",7.342e22, ..  // Mass in kg
-//        "vol", 2.1958e, ..   // Volume in m**3
-//        "r", , ..        // Mean radius in m
-//        "r_eq", , ..    // Equatorial radius in m
-//        "r_pol", , ..   // Polar radius in m
-//        "g", , ..         // Mean gravity in m/s**2
-//        "p", , ..        // Surface pressure ("sea level") in hPa
-//        "rho", , ..         // Mean density in kg/m**3
-//        "area", , ..  // Surface area in m**2
-//        "area_lnd",,.. // Surface area land in m**2
-//        "area_h2o",,.. // Surface area water in m**2
-//        "aph", , ..    // Aphelion in m
-//        "per", , .. // Pherihelion in m 
-//        "", 0 .. 
-//    );
+    moon = struct( .. 
+        "mass",7.342e22, ..      // Mass in kg
+        "vol", 2.1958e19, ..     // Volume in m**3
+        "r", 1738e3 , ..         // Mean radius in m
+        "r_eq", 1738.1e3, ..     // Equatorial radius in m
+        "r_pol", 1736.0e3, ..    // Polar radius in m
+        "g", 1.62 , ..           // Mean gravity in m/s**2
+        "p", 0.3e-11 , ..        // Surface pressure ("sea level") in hPa
+        "p_d", 1e-9 , ..         // Surface pressure at daytime in hPa
+        "p_n", 1e-12 , ..        // Surface pressure at night in hPa
+        "rho", 3344, ..          // Mean density in kg/m**3
+        "area", 37932330e6, ..   // Surface area in m**2
+        "aph", 405400e3, ..      // Aphelion in m
+        "per", 362600e3, ..      // Pherihelion in m 
+        "period_synod", 2551442.9, .. // Synodic period in s
+        "period_orbit", 2360587.1, .. // Orbital period in s
+        "", 0 .. 
+    );
     
     L0 = setdiff(who("local"), L0)
     execstr("["+strcat(L0,",")+"] = resume("+strcat(L0,",")+")")    
