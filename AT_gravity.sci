@@ -1,10 +1,10 @@
-// Berechnung der Schwerkraft eines Körpers in bestimmter Höhe über dem Körper
+// Gravity effected on an object above a massive body
 //
-// m = Masse des Körpers in kg
-// r = Radius des Körpers in m
-// h = Höhe über dem Körper in m
+// m = Mass of the body in kg (e.g. planet)
+// r = Radius of the body in m (e.g. radius of a planet)
+// h = Heigth of the object above the body in m (e.g. height of an artificial satellite)
 //
-// grav = Gravitation in m/s²
+// grav = Gravity effected on the object in m/s²
 
 function  [grav] = AT_gravity(m, r, h)
     inarg = argn(2);

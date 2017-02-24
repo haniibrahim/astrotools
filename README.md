@@ -10,13 +10,22 @@ Refer [`doc-table.csv`](https://github.com/haniibrahim/scilab-astrotools/blob/ma
 ## Usage
 
  * Save the files in an arbitrary directory. 
- * Load all sci-files with `getd('/path/to/sci-files')` 
- * To use the physical and astromical constants type `AT_astroconst()`. E.g. to get the radius of the earth you get it by `earth.r`. Open the file `AT_astroconst.sci` for details.
+ * Load all sci-files with `getd('/path/to/sci-files')` in the Scilab console
 
-You have to repeat this procedure after every restart of Scilab. If you want to avoid this, use the [library functionality](https://help.scilab.org/doc/5.3.3/en_US/lib.html "") of Scilab.
+> You have to repeat this procedure after every restart of Scilab. If you want to avoid this, use the [library functionality](https://help.scilab.org/doc/5.3.3/en_US/lib.html "") of Scilab.
 
+To use the physical and astromical constants type `AT_astroconst()` in the Scilab console. E.g. to get the radius of the earth you get it by `earth.r`. Open the file `AT_astroconst.sci` for details.
 
-  
+Get started:
+
+```
+getd('/path/to/sci-files')
+AT_astroconst()
+AT_gravity(earth.mass, earth.r, 400000) // Gravity @ISS
+```
+
+**Help** is availlable in the headers of the sci-files, too.
+
 
 ## Licence
 

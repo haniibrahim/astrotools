@@ -19,7 +19,7 @@
 // p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa
 // R:   Atmospheric refraction correction in °
 
-function [R] = AT_refraction(h_s, t, p)
+function [R] = AT_refraction_add(h_s, t, p)
     inarg = argn(2);
     if inarg > 3 | inarg < 1 then error("Wrong amount of parmeters"); end
     if  inarg == 1 then
