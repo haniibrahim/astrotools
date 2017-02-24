@@ -2,6 +2,15 @@ function AT_astroconst()
     L0 = "";
     L0 = who("local");
     
+    // Constant for checking wheter "AT_astroconst" is loaded or not via "exists()":
+    // if ~exists("AT_astroconst_loaded") then 
+    //   warning("off")
+    //   exec("./AT_astroconst.sci",-1); 
+    //   warning("on")
+    //   AT_astroconst();
+    // end
+    AT_astroconst_loaded = 1;
+    
     //General constants
     gen = struct( ..
         "G", 6.67408D-11, ..    // Gravity constant in m³/(kg*s²) or in Nm²/kg²
