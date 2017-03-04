@@ -1,4 +1,4 @@
-// Visual range w/ or w/o terrestrial refraction
+// Visual range w/ or w/o terrestrial refraction on Earth
 // Src: https://rechneronline.de/sehwinkel/sichtweite.php and
 // https://de.wikipedia.org/wiki/Sichtweite
 // 
@@ -6,7 +6,7 @@
 // height2 = height of distant object in m
 // refr    = terrestrial refraction (OPTIONAL)
 //           set to 1 (no refraction) if not committed, 
-//           refr = 1.08 is common value.
+//           refr = 1.13 is common value.
 // (height1 and height2 are interchangable)
 //
 // range = visual range of sight in m
