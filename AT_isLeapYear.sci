@@ -7,13 +7,12 @@
 // 
 // Example:
 //
-// isleapyear(2000)
-// @result{} 1
-// 
+// AT_isleapYear(2000)
+// ans = %T
 // The year 2000 is a leap year.
 // 
-// isleapyear(1900)
-// ans = 0
+// AT_isLeapYear(1900)
+// ans = %F
 // The year 1900 is not a leap year.
 
 function [leapYear] = AT_isLeapYear(year)

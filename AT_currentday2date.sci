@@ -1,9 +1,9 @@
 // Convert current day of the year to month and day
 //
-// The current day starts with 0 
-// => Jan., 1st = 0; Dec., 31st = 364 (normal year), 365 (leap year)
+// The current day starts with 1 
+// => Jan., 1st = 1 Dec., 31st = 365 (normal year), 366 (leap year)
 //
-// cday: current day of the year (1 .. 365)
+// cday: current day of the year (1 .. 365, 366 when leap year)
 // year: year as 4-digit number (e.g. 2016)
 //
 // month: month as a number (1 .. 12)
