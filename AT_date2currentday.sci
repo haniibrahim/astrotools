@@ -6,14 +6,22 @@
 // year: year as 4-digit number (e.g. 2016)
 // month: month as a number (1 .. 12)
 // day  : day as a number (1 .. 31)
+// h: hour (0..23)
+// m: minute (0..59)
+// s: second (0..59)
 //
 // cday: current day of the year (1 .. 365, 366 when leap year)
 
-function [cday] = AT_date2currentday(year, month, day)
+function [cday] = AT_date2currentday(year, month, day, h, m, s)
   // Check committed argument
   inarg = argn(2);
-  if inarg > 3 | inarg < 3 then error("Wrong amount of parameters"); end
+  if inarg > 6 | inarg < 3 then error("Wrong amount of parameters"); end
+  if inarg == 3 then
+      h = 0;
+      m = 0;
+      s = 0;
+  end
     
-  cday = datenum(year, month, day) - datenum(year, 1, 1) + 1;
+  cday = datenum(year, month, day, h, m, s) - datenum(year, 1, 1) + 1;
   
 endfunction

@@ -1,3 +1,4 @@
+FUNCTION NAME,DESCRIPTION,INPUT,OUTPUT,EXAMPLE,NOTES
 AT_atmosphAdsorbCoeff,Atmosheric adsorption coefficient,"dist  = Visual distance in m
 ",sigma = Atmosheric adsorption coefficient in m**(-1),AT_atmosphAdsorbCoeff(10.3),
 AT_fallvelo,Fall velocity,"h = Height in m,
@@ -23,10 +24,16 @@ AT_earthCurveHeight,Calculates how much a distant object is obscured by the eart
 dist  = target distance in m",h2    = target hidden height in m,"AT_earthCurveHeight(1.6, 50000, 1.13)",
 AT_currentday2date,Convert current day of the year to month and day,"cday: current day of the year (1 .. 365 / 366 leap year), 
 Year: year as 4-digit number (e.g. 2016)","month: month as a number (1 .. 12), 
-Day  : day as a number (1 .. 31)","AT_currentday2date(64, 2016)","The current day starts with 1  => Jan., 1st = 1; Dec., 31st = 365 (normal year), 366 (leap year)"
-AT_date2cuurentday,Convert date to current day of the year,"year: year as 4-digit number (e.g. 2016), 
+Day  : day as a number (1 .. 31),
+H: hour (0..23), 
+M: minute (0..59), 
+S: second (0..59)","AT_currentday2date(64, 2016)","The current day starts with 1  => Jan., 1st = 1; Dec., 31st = 365 (normal year), 366 (leap year)"
+AT_date2currentday,Convert date to current day of the year,"year: year as 4-digit number (e.g. 2016), 
 month: month as a number (1 .. 12), 
-day : day as a number (1 .. 31)","cday: current day of the year (1 .. 365, 366 when leap year)","AT_date2currentday(2017, 3, 10)","The current day starts with 1 => Jan., 1st = 1; Dec., 31st = 365 (normal year), 366 (leap year)"
+day : day as a number (1 .. 31), 
+H: hour (0..23), 
+M: minute (0..59), 
+S: second (0..59)","cday: current day of the year (1 .. 365, 366 when leap year)","AT_date2currentday(2017, 3, 10)","The current day starts with 1 => Jan., 1st = 1; Dec., 31st = 365 (normal year), 366 (leap year)"
 AT_isLeapYear,Calculates whether the committed year is a leap year or not.,year:    is the four-digit number of the year in question.,leapYear : is a boolean which is TRUE if “year” is a leap year and FALSE if not.,AT_isLeapYear(2016),
 AT_exitPupil,Exit pupil of an eye piece,"lens_dia    = lens diameter in m(mm), 
 lens_foclen = lens focal length in m(mm)",exitPupil   = exit pupil of the eye piece in question m(mm),"AT_exitPupil(150, 1200, 25)",

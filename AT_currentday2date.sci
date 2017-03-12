@@ -8,8 +8,10 @@
 //
 // month: month as a number (1 .. 12)
 // day  : day as a number (1 .. 31)
+// m: minute (0..59)
+// s: second (0..59)
 
-function [month, day] = AT_currentday2date(cday, year)
+function [month, day, h, m, s] = AT_currentday2date(cday, year)
   // Check committed argument
   inarg = argn(2);
   if inarg > 2 | inarg < 2 then error("Wrong amount of parameters"); end
@@ -18,5 +20,8 @@ function [month, day] = AT_currentday2date(cday, year)
   dateVector = datevec(datenum0);
   month = dateVector(:,2);
   day = dateVector(:,3);
+  h =dateVector(:,4);
+  m =dateVector(:,5);
+  s =dateVector(:,6);
 
 endfunction
