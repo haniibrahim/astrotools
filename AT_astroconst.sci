@@ -1,4 +1,24 @@
 function AT_astroconst()
+//
+// Constants for astronomic and physical calculations
+//
+// CALLING SEQUENCES
+// AT_astroconst()
+//
+// PARAMETERS
+// no parameters
+//
+// DESCRIPTION
+// Calling "AT_astroconst" will provide astronomic and physical 
+// constants as structs, e.g. mass off the earth as "earth.mass"
+//
+// EXAMPLES
+// AT_astroconst()
+// earth.mass // mass of the earth
+// earth.r    // mean radius of the earth
+// moon.g     // mean gravity of the moon
+//
+
     L0 = "";
     L0 = who("local");
     

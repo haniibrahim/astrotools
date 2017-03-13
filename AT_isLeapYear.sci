@@ -1,21 +1,20 @@
-// Calculates whether the committed year is a leap year or not.
-// 
-// year:    is the four-digit number of the year in question.
-// 
-// leapYear : is a boolean which is TRUE if "year" is a leap year 
-//            and FALSE if not.
-// 
-// Example:
-//
-// AT_isleapYear(2000)
-// ans = %T
-// The year 2000 is a leap year.
-// 
-// AT_isLeapYear(1900)
-// ans = %F
-// The year 1900 is not a leap year.
-
 function [leapYear] = AT_isLeapYear(year)
+//
+// Calculates whether the committed year is a leap year or not.
+//
+// CALLING SEQUENCES
+// leapYear = AT_isLeapYear(year)
+//
+// PARAMETERS
+// year:      four-digit number of the year in question.
+// leapYear : boolean which is %T if "year" is a leap year 
+//            and %F if not.
+//
+// DESCRIPTION
+// Calculates whether the committed year is a leap year or not. 
+// Result is a boolean
+// 
+
   // Check committed argument
   inarg = argn(2);
   if inarg > 1 | inarg < 1 then error("Wrong amount of parameters"); end

@@ -1,11 +1,14 @@
 # Astrotools for Scilab
 Astronomy functions for [Scilab](http://www.scilab.org/). Based on the [CelestLab](https://atoms.scilab.org/toolboxes/celestlab/)-Toolbox from [CNES](https://cnes.fr/en) (French space agency).
 
-> Just for my own purpose. Still under development. Use it if you find it useful.
+> Developed just for my own needs. Under permanent development. Use it if you find it helpful. No warranty, no service but bug reports welcome.
 
-## Functions description
+Functions make use of [SI units](https://en.wikipedia.org/wiki/International_System_of_Units "") only.
 
-Refer [`doc-table.csv`](https://github.com/haniibrahim/scilab-astrotools/blob/master/doc-table.csv "") as a quick reference manual. Functions make use of [SI units](https://en.wikipedia.org/wiki/International_System_of_Units "") only.
+## Function's description
+
+Refer [`doc-table.csv`](https://github.com/haniibrahim/scilab-astrotools/blob/master/doc-table.csv "") as a quick reference manual. 
+Astrotools' functions provide documentation in their header which are [uman](https://atoms.scilab.org/toolboxes/uman/2.1) compatible. If toolbox "uman" is installed, type e.g. `uman AT_gravity`for help.
 
 ## Usage
 
@@ -23,9 +26,10 @@ getd('/path/to/sci-files')
 AT_astroconst()
 AT_gravity(earth.mass, earth.r, 400000) // Gravity @ISS in m/s²
 ```
+## Dependencies
 
-Help is available in the headers of the sci-files, too.
-
+* [CelestLab](https://atoms.scilab.org/toolboxes/celestlab/) Toolbox
+* [uman](https://atoms.scilab.org/toolboxes/uman/2.1)  Toolbox (Recommended but not mandatory)
 
 ## Licence
 

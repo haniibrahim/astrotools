@@ -1,12 +1,26 @@
-// Calculates how much a distant object is obscured by the earth's curvature
+function [h2] = AT_earthCurveHeight(h1, dist, refr)
+//
+// Calculates how much a distant object is obscured by the earth's 
+// curvature
+//
+// CALLING SEQUENCES
+// h2 = AT_earthCurveHeight(h1, dist, refr)
+// h2 = AT_earthCurveHeight(h1, dist)
+//
+// PARAMETERS
+// h1:   Eye height in m
+// dist: Target distance in m
+// refr: Atmospheric refraction (OPTIONAL), 1.13 is common 
+// h2:   Target hidden height in m
+//
+// DESCRIPTION
+// Calculates how much a distant object is obscured by the earth's 
+// curvature. If "refr" is not committed no refraction is considered.
+// The atmospheric refraction can vary a lot but 1.13 is a common 
+// value.
 // Src: https://github.com/dizzib/earthcalc
 //
-// h1    = Eye height in m
-// dist  = target distance in m
-//
-// h2    = target hidden height in m
 
-function [h2] = AT_earthCurveHeight(h1, dist, refr)
     inarg = argn(2);
     if inarg > 3 | inarg < 2 then error("Wrong amount of parameters"); end
     if inarg == 2 then

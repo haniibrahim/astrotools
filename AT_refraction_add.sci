@@ -1,6 +1,19 @@
+function [R] = AT_refraction_add(h_s, t, p)
+//
 // Atmospheric refraction of an apparent altitude
 //
-// Atmospheric refraction from an appernent altitude of 
+// CALLING SEQUENCES
+// R = AT_refraction_add(h_s, t, p)
+// R = AT_refraction_add(h_s)
+//
+// PARAMETERS
+// h_s: apparent altitude of the astronomical body in °
+// t:   temperatur in K (OPTIONAL), if not specified t=283K
+// p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa
+// R:   Atmospheric refraction correction in °
+//
+// DESCRIPTION
+// Atmospheric refraction from an apparent altitude of 
 // an astronomical body to get the observed altitude.
 //
 // To get the observed altitude you have to add R to your
@@ -14,12 +27,7 @@
 //     tan ( h_s + ----------- )
 //         (        h_s + 4.4  )
 //
-// h_s: apparent altitude of the astronomical body in °
-// t:   temperatur in K (OPTIONAL), if not specified t=283K
-// p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa
-// R:   Atmospheric refraction correction in °
 
-function [R] = AT_refraction_add(h_s, t, p)
     inarg = argn(2);
     if inarg > 3 | inarg < 1 then error("Wrong amount of parmeters"); end
     if  inarg == 1 then

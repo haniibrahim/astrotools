@@ -1,5 +1,18 @@
+function [R_e] = AT_refraction_del(h_o, t, p)
+//
 // Atmospheric refraction elimination of an observed altitude
 //
+// CALLING SEQUENCES
+// R_e = AT_refraction_del(h_o, t, p)
+// R_e = AT_refraction_del(h_o)
+//
+// PARAMETERS
+// h_o: observed altitude of the astronomical body in °
+// t:   temperatur in K (OPTIONAL), if not specified t=283K
+// p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa
+// R:   Atmospheric refraction in °
+//
+// DESCRIPTION
 // Atmospheric refraction from an observed altitude of 
 // an astronomical body. Used to elimate the refraction and get the
 // real altitude w/o atmospheric influence.
@@ -15,12 +28,7 @@
 //       tan ( h_o + ----------- )
 //           (        h_o + 5.11 )
 //
-// h_o: observed altitude of the astronomical body in °
-// t:   temperatur in K (OPTIONAL), if not specified t=283K
-// p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa
-// R:   Atmospheric refraction in °
 
-function [R_e] = AT_refraction_del(h_o, t, p)
     inarg = argn(2);
     if inarg > 3 | inarg < 1 then error("Wrong amount of parmeters"); end
     if  inarg == 1 then
