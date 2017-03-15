@@ -18,5 +18,5 @@ function [ep] = AT_exitPupil(lens_dia, lens_foclen, ep_foclen)
     inarg = argn(2);
     if inarg > 3 | inarg < 3 then error("Wrong amount of parameters"); end
     acc = lens_foclen ./ ep_foclen;
-    exitPupil = lens_dia ./ acc;
+    ep = lens_dia ./ acc;
 endfunction
