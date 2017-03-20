@@ -1,28 +1,9 @@
 FUNCTION NAME,DESCRIPTION,INPUT,OUTPUT,EXAMPLE,NOTES
+AT_aperature,Needed aperatur to reach given angular resolution of an optic (telescope),res:  resolution in grad (°),"ap_r: aperature for red light (lamda=656nm) in m, 
+ap_g: aperature for green light (lamda=555nm) in m, 
+ap_b: aperature of blue light (lamda=400nm) in m","[red, green, blue] = AT_aperature(1/3600) // aperature for 1"" resolution","Calculates the needed aperatur of an telecope to reach a given resolution in grad (°) for three wave length (red=656nm, green=555nm, blue=400nm) in m. The results are valid for an perfect optic and sky. Getting a more realistic result by multiplicate the results with 1.22. "
 AT_atmosphAdsorbCoeff,Atmosheric adsorption coefficient,"dist  : Visual distance in m
 ",sigma:  Atmosheric adsorption coefficient in m**(-1),AT_atmosphAdsorbCoeff(10.3),
-AT_fallvelo,Fall velocity,"h : Height in m,
-A : Acceleration in m/s² (optional), if not specified a : 9.80665",v: fall velocity in m/s,AT_fallvelo(40000),
-AT_gravity,Gravity effected on an object above a massive body,"m : Mass of the body in kg, 
-r : Radius of the body in m, 
-h : Height above the body in m",,"AT_astroconst(); AT_gravity(earth.mass, earth.r, 400000) // Gravity @ISS",
-AT_isCelestlab,Checks if CelestLab toolbox is installed and loaded,,,AT_isCelestlab(),
-AT_orbitalspeed,Orbitalspeed in m/s,"m : Mass of the heaviest object in kg, 
-r : distance at which the speed is to be calculated in m, 
-a : length of the semi-major axis of the elliptical orbit. For the Earth at perihelion in m",v: orbital speed in m/s,"AT_astroconst(); AT_orbitalspeed(earth.mass, 400000, earth.per)",
-AT_refraction_add,Atmospheric refraction of an apparent altitude,"h_s: apparent altitude of the astronomical body in °, 
-t:   temperatur in K (OPTIONAL), if not specified t=283K, 
-p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R:   Atmospheric refraction correction in °,AT_refraction_add(25),You have to add the value to a calculated/real altitude to get the the observed altitude
-AT_refraction_del,Atmospheric refraction elimination of an observed altitude,"h_o: observed altitude of the astronomical body in °, 
-t:   temperatur in K (OPTIONAL), if not specified t=283K, 
-p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R_e: Atmospheric refraction in °,AT_refraction_del(25),"You have to substract the value to a observed altitude to get the
- real altitude w/o atmospheric influence."
-AT_visualRange,Visual range w/ or w/o terrestrial refraction,"height1 : height of eye/instrument in m, 
-height2 : height of distant object in m, 
-refr : terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",range = visual range of sight in m,"AT_visualRange(1.7, 12, 1.08)",Calculate how far you can see w/ or W/o terrestrial refraction correction. Mostly used for terestial views.
-AT_earthCurveHeight,Calculates how much a distant object is obscured by the earth's curvature,"h1    : Eye height in m, 
-dist  : target distance in m
-refr:  terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",h2    = target hidden height in m,"AT_earthCurveHeight(1.6, 50000, 1.13)",
 AT_currentday2date,Convert current day of the year to month and day,"cday: current day of the year (1 .. 365 / 366 leap year), 
 year: year as 4-digit number (e.g. 2016)","month: month as a number (1 .. 12), 
 day  : day as a number (1 .. 31),
@@ -35,6 +16,31 @@ day : day as a number (1 .. 31),
 h: hour (0..23), 
 m: minute (0..59), 
 s: second (0..59)","cday: current day of the year (1 .. 365, 366 when leap year)","AT_date2currentday(2017, 3, 10)","The current day starts with 1 => Jan., 1st = 1; Dec., 31st = 365 (normal year), 366 (leap year)"
-AT_isLeapYear,Calculates whether the committed year is a leap year or not.,year:    is the four-digit number of the year in question.,leapYear : is a boolean which is TRUE if “year” is a leap year and FALSE if not.,AT_isLeapYear(2016),
+AT_earthCurveHeight,Calculates how much a distant object is obscured by the earth's curvature,"h1    : Eye height in m, 
+dist  : target distance in m
+refr:  terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",h2    = target hidden height in m,"AT_earthCurveHeight(1.6, 50000, 1.13)",
 AT_exitPupil,Exit pupil of an eye piece,"lens_dia    : lens diameter in m(mm), 
 lens_foclen : lens focal length in m(mm)",exitPupil   = exit pupil of the eye piece in question m(mm),"AT_exitPupil(150, 1200, 25)",
+AT_fallvelo,Fall velocity,"h : Height in m,
+A : Acceleration in m/s² (optional), if not specified a : 9.80665",v: fall velocity in m/s,AT_fallvelo(40000),
+AT_gravity,Gravity effected on an object above a massive body,"m : Mass of the body in kg, 
+r : Radius of the body in m, 
+h : Height above the body in m",,"AT_astroconst(); AT_gravity(earth.mass, earth.r, 400000) // Gravity @ISS",
+AT_isCelestlab,Checks if CelestLab toolbox is installed and loaded,,,AT_isCelestlab(),
+AT_isLeapYear,Calculates whether the committed year is a leap year or not.,year:    is the four-digit number of the year in question.,leapYear : is a boolean which is TRUE if “year” is a leap year and FALSE if not.,AT_isLeapYear(2016),
+AT_orbitalspeed,Orbitalspeed in m/s,"m : Mass of the heaviest object in kg, 
+r : distance at which the speed is to be calculated in m, 
+a : length of the semi-major axis of the elliptical orbit. For the Earth at perihelion in m",v: orbital speed in m/s,"AT_astroconst(); AT_orbitalspeed(earth.mass, 400000, earth.per)",
+AT_refraction_add,Atmospheric refraction of an apparent altitude,"h_s: apparent altitude of the astronomical body in °, 
+t:   temperatur in K (OPTIONAL), if not specified t=283K, 
+p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R:   Atmospheric refraction correction in °,AT_refraction_add(25),You have to add the value to a calculated/real altitude to get the the observed altitude
+AT_refraction_del,Atmospheric refraction elimination of an observed altitude,"h_o: observed altitude of the astronomical body in °, 
+t:   temperatur in K (OPTIONAL), if not specified t=283K, 
+p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R_e: Atmospheric refraction in °,AT_refraction_del(25),"You have to substract the value to a observed altitude to get the
+ real altitude w/o atmospheric influence."
+AT_resolution,Angular resolution of an optic (telescope),ap: aperature in m,"res_r: resolution of red light (lamda=656nm) in grad(°), 
+res_g: resolution of green light (lamda=555nm) in grad(°), 
+res_b: resolution of blue light (lamda=400nm) in grad(°)","[red, green, blue] = AT_resolution(0.15) // 150mm aperature","Calculates the angular resolution of an optic (telescope) for three wave length of light (red=656nm, green=555nm, blue=400nm) in grad (°). The results are valid for an perfect optic and sky. Getting a more realistic result by multiplicate the results with 1.22."
+AT_visualRange,Visual range w/ or w/o terrestrial refraction,"height1 : height of eye/instrument in m, 
+height2 : height of distant object in m, 
+refr : terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",range = visual range of sight in m,"AT_visualRange(1.7, 12, 1.08)",Calculate how far you can see w/ or W/o terrestrial refraction correction. Mostly used for terestial views.
