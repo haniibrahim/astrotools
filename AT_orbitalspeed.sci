@@ -40,6 +40,6 @@ function [v] = AT_orbitalspeed(r, a, M, m)
     if ~exists("AT_astroconst_loaded") then 
         error("AT_astroconst() is not available, call AT_astroconst()")
     end
-    v = sqrt(gen.G .* (M + m) .* (2/r - 1/a));
+    v = sqrt(gen.G .* (M + m) .* (2 ./ r - 1 ./ a));
     return;
 endfunction
