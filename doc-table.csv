@@ -28,9 +28,14 @@ r : Radius of the body in m,
 h : Height above the body in m",,"AT_astroconst(); AT_gravity(earth.mass, earth.r, 400000) // Gravity @ISS",
 AT_isCelestlab,Checks if CelestLab toolbox is installed and loaded,,,AT_isCelestlab(),
 AT_isLeapYear,Calculates whether the committed year is a leap year or not.,year:    is the four-digit number of the year in question.,leapYear : is a boolean which is TRUE if “year” is a leap year and FALSE if not.,AT_isLeapYear(2016),
-AT_orbitalspeed,Orbitalspeed in m/s,"m : Mass of the heaviest object in kg, 
-r : distance at which the speed is to be calculated in m, 
-a : length of the semi-major axis of the elliptical orbit. For the Earth at perihelion in m",v: orbital speed in m/s,"AT_astroconst(); AT_orbitalspeed(earth.mass, 400000, earth.per)",
+AT_orbitalspeed,Orbital speed of an object orbitting a body at a particular distance,"r : distance at which the speed is to be calculated in m, 
+a : length of the semi-major axis of the elliptical orbit. For the Earth at perihelion in m (optional)
+M : Mass of the heavier object in kg, 
+m: Mass of the lighter object in kg (optional)",v: orbital speed in m/s,"AT_astroconst(); 
+AT_orbitalspeed(earth.r + 4e5, earth.mass) // Orbital speed of ISS (circular orbit); 
+AT_orbitalspeed(earth.per, earth.dist, sun.mass, earth.mass) // Orbital speed of the earth @perihelion (elliptical orbit)","Calculate the oribital speed of an object (e.g. satellite) orbitting a massive body (planet) at a particular height.
+The mass (m) of the lighter object can be omitted if the differenz to the heavier one is huge.
+On circular orbits a is equal to r."
 AT_refraction_add,Atmospheric refraction of an apparent altitude,"h_s: apparent altitude of the astronomical body in °, 
 t:   temperatur in K (OPTIONAL), if not specified t=283K, 
 p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R:   Atmospheric refraction correction in °,AT_refraction_add(25),You have to add the value to a calculated/real altitude to get the the observed altitude
