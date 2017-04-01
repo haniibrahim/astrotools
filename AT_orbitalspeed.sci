@@ -31,6 +31,11 @@ function [v] = AT_orbitalspeed(r, varargin)
     //
     inarg = argn(2);
     if inarg > 4 | inarg < 2 then error("Wrong amount of parameters"); end
+    if inarg == 4 then
+        a = varargin(1);
+        M = varargin(2);
+        m = varargin(3);
+    end
     if inarg == 3 then
         a = varargin(1);
         M = varargin(2);
