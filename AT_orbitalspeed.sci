@@ -1,4 +1,4 @@
-function [v] = AT_orbitalspeed(r, a, M, m)
+function [v] = AT_orbitalspeed(r, varargin)
     //
     // Orbital speed of an object orbitting a body at a particular height
     //
@@ -31,9 +31,13 @@ function [v] = AT_orbitalspeed(r, a, M, m)
     //
     inarg = argn(2);
     if inarg > 4 | inarg < 2 then error("Wrong amount of parameters"); end
-    if inarg == 3 then m = 0; end
-    if inarg == 2 then 
-        M = a; // 2nd parameter is M instead of a when only 2 parameters are commited
+    if inarg == 3 then
+        a = varargin(1);
+        M = varargin(2);
+        m = 0; 
+     end
+    if inarg == 2 then
+        M = varargin(1); // 2nd parameter is M instead of a when only 2 parameters are commited
         m = 0; // M >>> m
         a = r; // circular orbit
     end

@@ -23,7 +23,7 @@ function [ap_r, ap_g, ap_b] = AT_aperature(res)
     // [red, green, blue] = AT_aperature(1/3600) // aperature for 1" resolution
     // blue  = 0.0825059 // => 83 mm
     // green = 0.1144770 // => 115 mm
-    // red   = 0.1353097 // => 135 
+    // red   = 0.1353097 // => 135 mm
     //
     
     inarg = argn(2);
