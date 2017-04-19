@@ -4,6 +4,13 @@ ap_g: aperature for green light (lamda=555nm) in m,
 ap_b: aperature of blue light (lamda=400nm) in m","[red, green, blue] = AT_aperature(1/3600) // aperature for 1"" resolution","Calculates the needed aperatur of an telecope to reach a given resolution in grad (°) for three wave length (red=656nm, green=555nm, blue=400nm) in m. The results are valid for an perfect optic and sky. Getting a more realistic result by multiplicate the results with 1.22. "
 AT_atmosphAdsorbCoeff,Atmosheric adsorption coefficient,"dist  : Visual distance in m
 ",sigma:  Atmosheric adsorption coefficient in m**(-1),AT_atmosphAdsorbCoeff(10.3),
+AT_centrifugal,Centrifugal force from track or angular speed,"m: Mass of the object in kg, 
+r: Radius in m, 
+v: Track speed in m/s (as key=value), 
+o: Angular speed in °/s (as key=value)
+(just one of the latter)",F: Centrifugal force in N,"AT_astroconst(); 
+F_cent = AT_centrifugal(80, earth.r, v=463) // Centrifugal force at earth's equator (track speed used); 
+F_cent = AT_centrifugal(80, earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)",Calculates the centrifugal force for an given track OR angular speed. (Make use of key=value paramezer commitment)
 AT_currentday2date,Convert current day of the year to month and day,"cday: current day of the year (1 .. 365 / 366 leap year), 
 year: year as 4-digit number (e.g. 2016)","month: month as a number (1 .. 12), 
 day  : day as a number (1 .. 31),
