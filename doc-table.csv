@@ -11,6 +11,8 @@ o: Angular speed in °/s (as key=value)
 (just one of the latter)",F: Centrifugal force in N,"AT_astroconst(); 
 F_cent = AT_centrifugal(80, earth.r, v=463) // Centrifugal force at earth's equator (track speed used); 
 F_cent = AT_centrifugal(80, earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)",Calculates the centrifugal force for an given track OR angular speed. (Make use of key=value paramezer commitment)
+AT_cgheckCelestlab,Checks if Toolbox Celestlab is installed and loaded,none,Displays error message if tollbox Celeslab is not present,AT_checkCelestlab(),Check if Toolbox Celestlab was loaded. If not a error message is displayed and terminates the script or function.
+AT_checkAstroconst,Checks if AT_astroconst() was executed to provide constants,none,Displays error message if function AT_astroconst() was not executed for poviding constants,AT_checkAstroconst(),
 AT_currentday2date,Convert current day of the year to month and day,"cday: current day of the year (1 .. 365 / 366 leap year), 
 year: year as 4-digit number (e.g. 2016)","month: month as a number (1 .. 12), 
 day  : day as a number (1 .. 31),
