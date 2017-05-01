@@ -33,5 +33,5 @@ function [h2] = AT_earthCurveHeight(h1, dist, refr)
     R = earth.r;
     d1 = sqrt(h1**2 + 2 .* R .* h1);
     h2 = sqrt((dist-d1)**2 + R**2) - R;
-    h2 = h2 .* refr;
+    h2 = h2 ./ refr;
 endfunction 

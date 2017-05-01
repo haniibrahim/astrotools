@@ -57,6 +57,8 @@ p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R_e: Atmospheric re
 AT_resolution,Angular resolution of an optic (telescope),ap: aperature in m,"res_r: resolution of red light (lamda=656nm) in grad(°), 
 res_g: resolution of green light (lamda=555nm) in grad(°), 
 res_b: resolution of blue light (lamda=400nm) in grad(°)","[red, green, blue] = AT_resolution(0.15) // 150mm aperature","Calculates the angular resolution of an optic (telescope) for three wave length of light (red=656nm, green=555nm, blue=400nm) in grad (°). The results are valid for an perfect optic and sky. Getting a more realistic result by multiplicate the results with 1.22."
-AT_visualRange,Visual range w/ or w/o terrestrial refraction,"height1 : height of eye/instrument in m, 
+AT_visualRange,Visual range on a spherical body,"height1 : height of eye/instrument in m, 
 height2 : height of distant object in m, 
-refr : terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",range = visual range of sight in m,"AT_visualRange(1.7, 12, 1.08)",Calculate how far you can see w/ or W/o terrestrial refraction correction. Mostly used for terestial views.
+r: Radius of spherical body (e.g. planet)
+refr : terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",range = visual range of sight in m,"AT_astroconst(); 
+range = AT_visualRange(1.5, 100, earth.r, 1.13) // A object of 100m height can be observed by an observer with a eye level of 1.5m to a distance of approx. 45.3km when taken a terrestrial refraction of 13% into account.",Calculates to which distance an object of a specific height can be observed on a speherical body by an observer of an itself specific height.
