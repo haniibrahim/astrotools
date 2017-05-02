@@ -1,12 +1,16 @@
-function AT_astroconst()
+function AT_astroconst(silence)
     //
     // Constants for astronomic and physical calculations
     //
     // CALLING SEQUENCES
     // AT_astroconst()
+    // AT_astroconst(silence)
     //
     // PARAMETERS
-    // no parameters
+    // silence: if contains "yes", 1 or %T than the warning "... already loaded"
+    //          will NOT appear when AT_astroconst is already loaded. If you do 
+    //          not commit a parameter or commit anything else the warning  
+    //          mentioned above is displayed if applicable.
     //
     // DESCRIPTION
     // Calling "AT_astroconst" will provide astronomic and physical 
@@ -30,17 +34,29 @@ function AT_astroconst()
     // Not all constants are available for all bodies.
     //
     // EXAMPLES
+    // AT_astroconst("yes")
+    // AT_astroconst(1)
+    // AT_astroconst(%T)
     // AT_astroconst()
+    // // getting some constants
     // earth.mass // mass of the earth in kg
     // earth.r    // mean radius of the earth in m
     // moon.g     // mean gravity of the moon in m/s^2
     //
-
+    
     L0 = "";
     L0 = who("local");
 
     // Check if AT_astroconst() was already loaded. If so it returns immediately
-    if exists("AT_astroconst_loaded") then disp("AT_astroconst() already loaded");  return; end
+    if ~exists("silence","local") then silence = ""; end
+    if exists("AT_astroconst_loaded") then
+        if silence == "yes" | silence == 1 | silence == %T then
+            return;
+        else
+            disp("AT_astroconst() already loaded");  
+            return;
+        end 
+    end
     
     AT_astroconst_loaded = 1;
     
