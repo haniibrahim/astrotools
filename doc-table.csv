@@ -2,6 +2,10 @@ FUNCTION NAME,DESCRIPTION,INPUT,OUTPUT,EXAMPLE,NOTES
 AT_aperature,Needed aperatur to reach given angular resolution of an optic (telescope),res:  resolution in grad (°),"ap_r: aperature for red light (lamda=656nm) in m, 
 ap_g: aperature for green light (lamda=555nm) in m, 
 ap_b: aperature of blue light (lamda=400nm) in m","[red, green, blue] = AT_aperature(1/3600) // aperature for 1"" resolution","Calculates the needed aperatur of an telecope to reach a given resolution in grad (°) for three wave length (red=656nm, green=555nm, blue=400nm) in m. The results are valid for an perfect optic and sky. Getting a more realistic result by multiplicate the results with 1.22. "
+AT_apparentSize,Calculates the visual angle (angle of sight) or apparent size of an observed object in the distance,"obj_size: Real size of the object in the distant in m, 
+dist:     Distance from the observer to the object in m","pp_size: Apparent size, visual angle or parallax in °","AT_astroconst(); 
+AppSize = AT_visualAngle(moon.r*2, moon.dist) // Apparent size of the moon","Calculates the visual angle (angle of sight) or apparent size of an observed object in the distance. 
+The moon has a distance of 400,000km and a size of 3,500km. The apparent size is 0.5°."
 AT_atmosphAdsorbCoeff,Atmosheric adsorption coefficient,"dist  : Visual distance in m
 ",sigma:  Atmosheric adsorption coefficient in m**(-1),AT_atmosphAdsorbCoeff(10.3),
 AT_centrifugal,Centrifugal force from track or angular speed,"m: Mass of the object in kg, 
@@ -11,8 +15,8 @@ o: Angular speed in °/s (as key=value)
 (just one of the latter)",F: Centrifugal force in N,"AT_astroconst(); 
 F_cent = AT_centrifugal(80, earth.r, v=463) // Centrifugal force at earth's equator (track speed used); 
 F_cent = AT_centrifugal(80, earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)",Calculates the centrifugal force for an given track OR angular speed. (Make use of key=value paramezer commitment)
-AT_checkCelestlab,Checks if Toolbox Celestlab is installed and loaded,none,Displays error message if tollbox Celeslab is not present,AT_checkCelestlab(),Check if Toolbox Celestlab was loaded. If not a error message is displayed and terminates the script or function.
 AT_checkAstroconst,Checks if AT_astroconst() was executed to provide constants,none,Displays error message if function AT_astroconst() was not executed for poviding constants,AT_checkAstroconst(),
+AT_checkCelestlab,Checks if Toolbox Celestlab is installed and loaded,none,Displays error message if tollbox Celeslab is not present,AT_checkCelestlab(),Check if Toolbox Celestlab was loaded. If not a error message is displayed and terminates the script or function.
 AT_currentday2date,Convert current day of the year to month and day,"cday: current day of the year (1 .. 365 / 366 leap year), 
 year: year as 4-digit number (e.g. 2016)","month: month as a number (1 .. 12), 
 day  : day as a number (1 .. 31),
@@ -49,6 +53,8 @@ AT_orbitalspeed(earth.r + 4e5, earth.mass) // Orbital speed of ISS (circular orb
 AT_orbitalspeed(earth.per, earth.dist, sun.mass, earth.mass) // Orbital speed of the earth @perihelion (elliptical orbit)","Calculate the oribital speed of an object (e.g. satellite) orbitting a massive body (planet) at a particular height.
 The mass (m) of the lighter object can be omitted if the differenz to the heavier one is huge.
 On circular orbits a is equal to r."
+AT_realSize,Calculates the real size of an object in the distance from the apparent size,"app_size: Apparent size of the object in the distant in °, 
+dist:     Distance from the observer to the object in m",obj_size: Real size of the object in the distant in m,"obj_size = AT_realSize(0.19, 31e6) // Real size of galaxy M51",
 AT_refraction_add,Atmospheric refraction of an apparent altitude,"h_s: apparent altitude of the astronomical body in °, 
 t:   temperatur in K (OPTIONAL), if not specified t=283K, 
 p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R:   Atmospheric refraction correction in °,AT_refraction_add(25),You have to add the value to a calculated/real altitude to get the the observed altitude

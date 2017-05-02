@@ -77,7 +77,7 @@ function AT_astroconst()
     moon = struct( .. 
     "mass",7.342e22, ..      // Mass in kg
     "vol", 2.1958e19, ..     // Volume in m^3
-    "r", 1738e3 , ..         // Mean radius in m1,017 
+    "r", 1738e3 , ..         // Mean radius in m 
     "r_eq", 1738.1e3, ..     // Equatorial radius in m
     "r_pol", 1736.0e3, ..    // Polar radius in m
     "g", 1.62 , ..           // Mean gravity in m/s^2
@@ -86,8 +86,9 @@ function AT_astroconst()
     "p_n", 1e-12 , ..        // Surface pressure at night in hPa
     "rho", 3344, ..          // Mean density in kg/m^3
     "area", 37932330e6, ..   // Surface area in m^2
-    "aph", 405400e3, ..      // Aphelion in m
-    "per", 362600e3, ..      // Pherihelion in m 
+    "dist", 384.4e6, ..      // Distance (Semi-major axis)
+    "aph", 405.5e6, ..       // Aphelion in m
+    "per", 363.3e6, ..       // Pherihelion in m 
     "period_synod", 2551442.9, .. // Synodic period in s
     "period_orbit", 2360587.1, .. // Orbital period in s
     "", 0 .. 
