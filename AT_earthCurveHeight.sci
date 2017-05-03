@@ -1,17 +1,20 @@
-function [h2] = AT_earthCurveHeight(h1, dist, refr)
+function [h1, hrz] = AT_earthCurveHeight(h0, dist, refr)
     //
     // Calculates how much a distant object is obscured by the earth's 
     // curvature
     //
     // CALLING SEQUENCES
-    // h2 = AT_earthCurveHeight(h1, dist, refr)
-    // h2 = AT_earthCurveHeight(h1, dist)
+    // h1 = AT_earthCurveHeight(h0, dist, refr)
+    // h1 = AT_earthCurveHeight(h0, dist)
+    // [h1, hrz] = AT_earthCurveHeight(h0, dist, refr)
+    // [h1, hrz] = AT_earthCurveHeight(h0, dist)
     //
     // PARAMETERS
-    // h1:   Eye height in m
-    // dist: Target distance in m
-    // refr: Atmospheric refraction (OPTIONAL), 1.13 is common 
-    // h2:   Target hidden height in m
+    // h0:   Eye level in m
+    // dist: Object distance in m
+    // refr: Terrestrial refraction (OPTIONAL), 1.13 is common 
+    // h1:   Object obscured in m
+    // hrz:  Distance to horizon
     //
     // DESCRIPTION
     // Calculates how much a distant object is obscured by the earth's 
@@ -20,18 +23,30 @@ function [h2] = AT_earthCurveHeight(h1, dist, refr)
     // value.
     // Src: https://github.com/dizzib/earthcalc
     //
+    // EXAMPLES
+    // Obscured height of an object 50km away from 1.6m eye level and 
+    // distance to the horizon from 1.6m eye level, terrestrial refraction
+    // of 13% was considered.
+    //
+    // [hiddenHeight, distHorizon] = AT_earthCurveHeight(1.6, 50000, 1.13)
+    //
 
     inarg = argn(2);
     if inarg > 3 | inarg < 2 then error("Wrong amount of parameters"); end
     if inarg == 2 then
         refr = 1; // No terrestrial refraction
     end
-    if ~exists("AT_astroconst_loaded") then 
-        error("AT_astroconst() is not available, call AT_astroconst()")
-    end
+
+    AT_checkAstroconst();
 
     R = earth.r;
-    d1 = sqrt(h1**2 + 2 .* R .* h1);
-    h2 = sqrt((dist-d1)**2 + R**2) - R;
-    h2 = h2 ./ refr;
+    hrz = sqrt(h0 .^ 2 + 2 .* R .* h0) .* refr;
+
+    if hrz >= dist then // When target distance is within horizon distance
+        h1 = 0;
+    else
+        h1 = sqrt((dist-(hrz ./ refr)) .^ 2 + R .^2) - R; // hrz/refr: to get the refraction-free length, refraction is considered later
+        h1 = h1 ./ refr; 
+    end
+
 endfunction 

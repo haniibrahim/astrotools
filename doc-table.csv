@@ -31,7 +31,8 @@ m: minute (0..59),
 s: second (0..59)","cday: current day of the year (1 .. 365, 366 when leap year)","AT_date2currentday(2017, 3, 10)","The current day starts with 1 => Jan., 1st = 1; Dec., 31st = 365 (normal year), 366 (leap year)"
 AT_earthCurveHeight,Calculates how much a distant object is obscured by the earth's curvature,"h1    : Eye height in m, 
 dist  : target distance in m
-refr:  terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",h2    = target hidden height in m,"AT_earthCurveHeight(1.6, 50000, 1.13)",
+refr:  terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.","h2: target hidden height in m
+hrz: distance to the horizon in m","[hiddenHeight, distHorizon] = AT_earthCurveHeight(1.6, 50000, 1.13)",
 AT_escSpeed,Escape speed from an non-rotating massive body at a certain height,"m:    Mass of the body in kg (e.g. planet), 
 r:    Radius of the body in m (e.g. radius of a planet), 
 h:    Heigth of the object above the body in m (e.g. height of an artificial satellite)",v:    Escape velocity in m/s,"AT_astroconst(); 

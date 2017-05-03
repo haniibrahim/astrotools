@@ -48,12 +48,12 @@ function AT_astroconst(silence)
     L0 = who("local");
 
     // Check if AT_astroconst() was already loaded. If so it returns immediately
-    if ~exists("silence","local") then silence = ""; end
     if exists("AT_astroconst_loaded") then
+        if ~exists("silence","local") then silence = ""; end
         if silence == "yes" | silence == 1 | silence == %T then
             return;
         else
-            disp("AT_astroconst() already loaded");  
+            warning("AT_astroconst() already loaded");  
             return;
         end 
     end
