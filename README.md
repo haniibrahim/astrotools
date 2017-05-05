@@ -1,4 +1,5 @@
 # Astrotools for Scilab
+
 Astronomy functions for [Scilab](http://www.scilab.org/). Some may based on the [CelestLab](https://atoms.scilab.org/toolboxes/celestlab/)-Toolbox from [CNES](https://cnes.fr/en) (French space agency).
 
 > Developed just for my own needs. Under permanent development. Use it if you find it helpful. No warranty, no service but bug reports welcome.
@@ -12,22 +13,30 @@ Astrotools' functions provide documentation in their header which are [uman](htt
 
 ## Usage
 
-Astrotools work on all platforms Scilab supports (Windows, Linux, macOS).
+Astrotools works on all platforms Scilab supports (Windows, Linux, macOS).
 
- * Save the (sci-)files in an arbitrary directory. 
- * Load all sci-files into Scilab by typing  `getd('/path/to/sci-files/')` in the Scilab console
+ 1. Save the (sci-)files in an arbitrary directory. 
+ 2. Load all sci-files into Scilab by typing  `getd('/path/to/astrotools-sci-files/')` in the Scilab console
+ 3. To use the physical and astromical constants, type `AT_astroconst()` in the Scilab console. 
 
-> You have to repeat this procedure after every restart of Scilab. If you want to avoid this, use the [library functionality](https://help.scilab.org/doc/5.3.3/en_US/lib.html "") of Scilab.
+>E.g. to get the radius of the earth you get it by `earth.r`. Open the file `AT_astroconst.sci` for details.
 
-To use the physical and astromical constants type `AT_astroconst()` in the Scilab console. E.g. to get the radius of the earth you get it by `earth.r`. Open the file `AT_astroconst.sci` for details.
-
-Get started:
+**Get started:**
 
 ```
-getd('/path/to/sci-files')
+// init
+getd('/path/to/astrotools-sci-files')
 AT_astroconst()
+// calculation
 AT_gravity(earth.mass, earth.r, 400000) // Gravity @ISS in m/s²
 ```
+
+**Easy initialization:**
+
+Execute the `init.sce` script before you start calculating or after `clear()`. The script call `getd()`, `AT_astroconst()`, etc. in one command.
+
+>You have to repeat calling `init.sce` or the init commands above after each restart of Scilab or after each `clear()`. If you want to avoid this, use the [library functionality](https://help.scilab.org/doc/5.3.3/en_US/lib.html "") of Scilab.
+
 ## Dependencies
 
 * [Scilab](http://www.scilab.org/) Application (tested with v5.5.2) 

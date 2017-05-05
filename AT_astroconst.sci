@@ -50,6 +50,7 @@ function AT_astroconst(silence)
     // Check if AT_astroconst() was already loaded. If so it returns immediately
     if exists("AT_astroconst_loaded") then
         if ~exists("silence","local") then silence = ""; end
+        if type(silence) == 10 then silence = convstr(silence,"l"); end// make lowercase when string (type()==10)
         if silence == "yes" | silence == 1 | silence == %T then
             return;
         else
