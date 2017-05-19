@@ -71,3 +71,6 @@ height2 : height of distant object in m,
 r: Radius of spherical body in m, e.g. planet (OPTIONAL), set to the mean radius of earth if not committed
 refr : terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",range = maximium visual range of sight in m,"AT_astroconst(); 
 range = AT_visualRange(1.5, 100, earth.r, 1.13) // The top of an object of 100m height can be observed by an observer with a eye level of 1.5m to a distance of approx. 45.3km when a terrestrial refraction of 13% is taken into account.",Calculates to which distance the top of an object of a specific height can be observed on a speherical body by an observer of an itself specific height.
+AT_circumLat,Calculates the cirumference of a sphere at a certain latitude,"lat: latitude in degrees (°)
+r:   Radius of the sphere, e.g radius of the earth (OPTIONAL), when r is not committed r = mean radius of the earth","U:   Circumference of the sphere with the radius ""r"" at latitude ""lat""","U = AT_circumLat(52.5) // Circumfence of the earth at Berlin, Germany
+U = AT_circumLat(52.5, earth.r) // the same as above",Calculate the circumfence of a sphere at a certain latitude. E.g. to get the circumfence of the earth at your home town to calculate the local orbital speed

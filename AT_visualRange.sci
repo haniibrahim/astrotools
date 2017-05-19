@@ -21,7 +21,7 @@ function [range] = AT_visualRange(height1, height2, r, refr)
     //
     // DESCRIPTION
     // Calculates to which max. distance the top of an object of a specific height 
-    // can be observed on a speherical body by an observer of an itself specific 
+    // can be observed on a spherical body by an observer of an itself specific 
     // height.
     //
     // EXAMPLES
