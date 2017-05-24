@@ -17,6 +17,9 @@ F_cent = AT_centrifugal(80, earth.r, v=463) // Centrifugal force at earth's equa
 F_cent = AT_centrifugal(80, earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)",Calculates the centrifugal force for an given track OR angular speed. (Make use of key=value paramezer commitment)
 AT_checkAstroconst,Checks if AT_astroconst() was executed to provide constants,none,Displays error message if function AT_astroconst() was not executed for poviding constants,AT_checkAstroconst(),
 AT_checkCelestlab,Checks if Toolbox Celestlab is installed and loaded,none,Displays error message if tollbox Celeslab is not present,AT_checkCelestlab(),Check if Toolbox Celestlab was loaded. If not a error message is displayed and terminates the script or function.
+AT_circumLat,Calculates the cirumference of a sphere at a certain latitude,"lat: latitude in degrees (°)
+r:   Radius of the sphere, e.g radius of the earth (OPTIONAL), when r is not committed r = mean radius of the earth","U:   Circumference of the sphere with the radius ""r"" at latitude ""lat""","U = AT_circumLat(52.5) // Circumfence of the earth at Berlin, Germany
+U = AT_circumLat(52.5, earth.r) // the same as above",Calculate the circumfence of a sphere at a certain latitude. E.g. to get the circumfence of the earth at your home town to calculate the local orbital speed
 AT_currentday2date,Convert current day of the year to month and day,"cday: current day of the year (1 .. 365 / 366 leap year), 
 year: year as 4-digit number (e.g. 2016)","month: month as a number (1 .. 12), 
 day  : day as a number (1 .. 31),
@@ -39,6 +42,8 @@ h:    Heigth of the object above the body in m (e.g. height of an artificial sat
 AT_escSpeed(earth.mass, earth.r, 0) // escape vel. from the earth @sea level",Calculates minimum speed needed for an object to escape from a massive body from a definite height. But rotating of the body is unconsidered.
 AT_exitPupil,Exit pupil of an eye piece,"lens_dia    : lens diameter in m(mm), 
 lens_foclen : lens focal length in m(mm)",exitPupil   = exit pupil of the eye piece in question m(mm),"AT_exitPupil(150, 1200, 25)",
+AT_falltime,Calculates the fall time of a body at a particular height,"h: Height in m
+a: Acceleration in m/s² (optional), if not specified a = 9.80665",t: fall time in s,,Calculate the fall time of a body at a particular height with a particular gavity/accelleration w/o air resistance
 AT_fallvelo,Fall velocity,"h : Height in m,
 A : Acceleration in m/s² (optional), if not specified a : 9.80665",v: fall velocity in m/s,AT_fallvelo(40000),
 AT_gravity,Gravity effected on an object above a massive body,"m : Mass of the body in kg, 
@@ -71,6 +76,3 @@ height2 : height of distant object in m,
 r: Radius of spherical body in m, e.g. planet (OPTIONAL), set to the mean radius of earth if not committed
 refr : terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",range = maximium visual range of sight in m,"AT_astroconst(); 
 range = AT_visualRange(1.5, 100, earth.r, 1.13) // The top of an object of 100m height can be observed by an observer with a eye level of 1.5m to a distance of approx. 45.3km when a terrestrial refraction of 13% is taken into account.",Calculates to which distance the top of an object of a specific height can be observed on a speherical body by an observer of an itself specific height.
-AT_circumLat,Calculates the cirumference of a sphere at a certain latitude,"lat: latitude in degrees (°)
-r:   Radius of the sphere, e.g radius of the earth (OPTIONAL), when r is not committed r = mean radius of the earth","U:   Circumference of the sphere with the radius ""r"" at latitude ""lat""","U = AT_circumLat(52.5) // Circumfence of the earth at Berlin, Germany
-U = AT_circumLat(52.5, earth.r) // the same as above",Calculate the circumfence of a sphere at a certain latitude. E.g. to get the circumfence of the earth at your home town to calculate the local orbital speed
