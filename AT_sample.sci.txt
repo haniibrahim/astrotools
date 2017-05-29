@@ -1,0 +1,20 @@
+function [] = AT_sample()
+    //
+    // [Brief description]
+    //
+    // CALLING SEQUENCES
+    // 
+    //
+    // PARAMETERS
+    // 
+    //
+    // DESCRIPTION
+    // 
+    //
+    // EXAMPLES
+    // 
+    // 
+
+    inarg = argn(2); // number of parameters/arguments
+
+endfunction
