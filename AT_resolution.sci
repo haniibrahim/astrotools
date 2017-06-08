@@ -27,7 +27,7 @@ function [res_r, res_g, res_b] = AT_resolution(ap)
     //
     
     inarg = argn(2);
-    if inarg > 1 | inarg < 1 then error("Wrong amount of parameters"); disp_usage(); end
+    if inarg > 1 | inarg < 1 then error(39); end
     
     lam_r = 6.56e-4; // wave length red light in mm
     lam_g = 5.55e-4; // wave length green light in mm

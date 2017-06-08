@@ -35,7 +35,7 @@ function [v] = AT_escSpeed(m,r,h)
     // esc = AT_escSpeed(earth.mass, earth.r, 0) // escape vel. from the earth @sea level
     //
     inarg = argn(2);
-    if inarg > 3 | inarg < 3 then error("Wrong anount of parameters"); end
+    if inarg > 3 | inarg < 3 then error(39); end
     if r+h == 0 then error("h + r must not be zero!"); end
 
     if ~exists("AT_astroconst_loaded") then 

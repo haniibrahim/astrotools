@@ -30,7 +30,7 @@ function [v] = AT_orbitalspeed(r, varargin)
     // v = AT_orbitalspeed(earth.per, earth.dist, sun.mass, earth.mass) // Orbital speed of the earth at perihelion
     //
     inarg = argn(2);
-    if inarg > 4 | inarg < 2 then error("Wrong amount of parameters"); end
+    if inarg > 4 | inarg < 2 then error(39); end
     if inarg == 4 then
         a = varargin(1);
         M = varargin(2);

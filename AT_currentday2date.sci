@@ -21,7 +21,7 @@ function [month, day, h, m, s] = AT_currentday2date(cday, year)
     
     // Check committed argument
     inarg = argn(2);
-    if inarg > 2 | inarg < 2 then error("Wrong amount of parameters"); end
+    if inarg > 2 | inarg < 2 then error(39); end
 
     datenum0 = cday + datenum(year, 1, 1) - 1;
     dateVector = datevec(datenum0);

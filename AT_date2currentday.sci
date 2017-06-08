@@ -21,7 +21,7 @@ function [cday] = AT_date2currentday(year, month, day, h, m, s)
 
     // Check committed argument
     inarg = argn(2);
-    if inarg > 6 | inarg < 3 then error("Wrong amount of parameters"); end
+    if inarg > 6 | inarg < 3 then error(39); end
     if inarg == 3 then
         h = 0;
         m = 0;

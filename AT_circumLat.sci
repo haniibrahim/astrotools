@@ -22,7 +22,7 @@ function [U] = AT_circumLat(lat, r)
     // U = AT_circumLat(52.5, earth.r) // the same as above
     //
     inarg = argn(2);
-    if inarg > 2 | inarg < 1 then error("Wrong amount of parameters"); end
+    if inarg > 2 | inarg < 1 then error(39); end
     if ~exists("r","local") then
         AT_checkAstroconst();
         r = earth.r; // Radius of earth if no specific radius was committed

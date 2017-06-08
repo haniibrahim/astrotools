@@ -21,7 +21,7 @@ function [obj_size] = AT_realSize(app_size, dist)
     // obj_size = AT_realSize(0.19, 31e6) // Real size of galaxy M51
     //
     inarg = argn(2);
-    if inarg > 2 | inarg < 2 then error("Wrong amount of parameters"); end
+    if inarg > 2 | inarg < 2 then error(39); end
     
     AT_checkCelestlab();
     

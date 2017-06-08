@@ -16,7 +16,7 @@ function [v] = AT_fallvelo(h, a)
     // a particular gavity/accelleration w/o air resistance
     //
     inarg = argn(2);
-    if inarg > 2 | inarg < 1 then error("Wrong amount of parameters"); end
+    if inarg > 2 | inarg < 1 then error(39); end
     if inarg ==1 then a = 9.80665; end // a=g
     v = sqrt(2 .* a .* h)
 endfunction

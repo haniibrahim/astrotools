@@ -26,7 +26,7 @@ function [F] = AT_centrifugal(m, r, v, o)
     // F_cent = AT_centrifugal(80, earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)
     //
     inarg = argn(2);
-    if inarg > 3 | inarg < 3 then error("Wrong anount of parameters"); end
+    if inarg > 3 | inarg < 3 then error(39); end
     if r == 0 then error("Radius must not be zero!"); end
     
     if exists("v","local") then F = m * v**2 ./ r; end

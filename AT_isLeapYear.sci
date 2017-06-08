@@ -17,7 +17,7 @@ function [leapYear] = AT_isLeapYear(year)
 
     // Check committed argument
     inarg = argn(2);
-    if inarg > 1 | inarg < 1 then error("Wrong amount of parameters"); end
+    if inarg > 1 | inarg < 1 then error(39); end
 
     // Leap year
     // - Every 4th year is a leap year

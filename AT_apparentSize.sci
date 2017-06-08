@@ -22,7 +22,7 @@ function [app_size] = AT_apparentSize(obj_size, dist)
     // appSize = AT_visualAngle(moon.r*2, moon.dist) // Apparent size of the moon
     //
     inarg = argn(2);
-    if inarg > 2 | inarg < 2 then error("Wrong amount of parameters"); end
+    if inarg > 2 | inarg < 2 then error(39); end
     
     AT_checkCelestlab();
     

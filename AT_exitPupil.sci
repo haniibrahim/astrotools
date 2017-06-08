@@ -16,7 +16,7 @@ function [ep] = AT_exitPupil(lens_dia, lens_foclen, ep_foclen)
     // appropriate eye piece (focal length) with the telescope
     //
     inarg = argn(2);
-    if inarg > 3 | inarg < 3 then error("Wrong amount of parameters"); end
+    if inarg > 3 | inarg < 3 then error(39); end
     acc = lens_foclen ./ ep_foclen;
     ep = lens_dia ./ acc;
 endfunction

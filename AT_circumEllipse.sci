@@ -21,7 +21,7 @@ function [U]=AT_circumEllipse(aph, per)
     // 
 
     inarg = argn(2); // number of parameters/arguments
-    if inarg < 2 then error("Wrong amount of parmeters"); end
+    if inarg < 2 | inarg > 2 then error(39); end
     
     ecc = (aph - per) ./ (aph + per); // eccentrtricity
     U = (aph + per) * %pi .* (1 + (3 .* ecc**2) ./ (10 + sqrt(4 - 3 .* ecc**2)));

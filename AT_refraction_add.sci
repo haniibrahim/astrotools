@@ -29,7 +29,7 @@ function [R] = AT_refraction_add(h_s, t, p)
     //
 
     inarg = argn(2);
-    if inarg > 3 | inarg < 1 then error("Wrong amount of parmeters"); end
+    if inarg > 3 | inarg < 1 then error(39); end
     if  inarg == 1 then
         p = 1010 // pressure: 1010 hPa
         t = 283  // temperatur: 283 K (10°C)

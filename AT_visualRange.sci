@@ -33,7 +33,7 @@ function [range] = AT_visualRange(height1, height2, r, refr)
     // 
 
     inarg = argn(2);
-    if inarg > 4 | inarg < 2 then error("Wrong amount of parameters"); end
+    if inarg > 4 | inarg < 2 then error(39); end
     if ~exists("refr", "local") then refr = 1; end // No terrestrial refraction
     if ~exists("r","local") then
         AT_checkAstroconst();
