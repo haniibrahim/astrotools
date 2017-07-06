@@ -1,6 +1,6 @@
 function [t] = AT_falltime(h, a)
     //
-    // Calculates the fall time of a body at a particular height
+    // Calculates the fall time of a body at a particular height in vacuum
     //
     // CALLING SEQUENCES
     // [t] = AT_falltime(h, a)
@@ -13,7 +13,7 @@ function [t] = AT_falltime(h, a)
     //
     // DESCRIPTION
     // Calculate the fall time of a body at a particular height with
-    // a particular gavity/accelleration w/o air resistance
+    // a particular gavity/accelleration w/o air resistance (vacuum)
     //
     inarg = argn(2);
     if inarg > 2 | inarg < 1 then error(39); end
