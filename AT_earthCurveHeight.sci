@@ -33,7 +33,7 @@ function [h1, hrz] = AT_earthCurveHeight(h0, dist, refr)
 
     inarg = argn(2);
     if inarg > 3 | inarg < 2 then error(39); end
-    if inarg == 2 then
+    if inarg == 2 then 
         refr = 1; // No terrestrial refraction
     end
 
