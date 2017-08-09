@@ -34,6 +34,15 @@ day : day as a number (1 .. 31),
 h: hour (0..23), 
 m: minute (0..59), 
 s: second (0..59)","cday: current day of the year (1 .. 365, 366 when leap year)","AT_date2currentday(2017, 3, 10)","The current day starts with 1 => Jan., 1st = 1; Dec., 31st = 365 (normal year), 366 (leap year)"
+AT_distSphere,Distance on a perfect sphere or real earth via langitude and longitude,"latA: Latitude of the first point (A) in decimal degrees or vector of DMS [deg arcmin arcsec]
+LongA: Longitude of the first point (A) in decimal degrees or vector of DMS [deg arcmin arcsec]
+latB: Latitude of the second point (B) in decimal degrees or vector of DMS [deg arcmin arcsec]
+longB: Longitude of the second point (B) in decimal degrees or vector of DMS [deg arcmin arcsec] (Lat and Long are positive when N and E, and negative when S and W)
+R: Radius of the sphere in m (OPTIONAL) if specified the calculation method ""Orthodrome"" is used (for perfect sphere). If not specified the calculation method from Thaddeus  Vincenty is used for a more accurate result on earth (accuracy: approx. 50m)",dist:   Distance of point A to B in m,"// Distance between Berlin and Tokio when earth is a perfect sphere, Orthodrome method is used for calculation
+[dist] = AT_distSphere(52.517, 13.4, 35.7, 139.767)
+[dist] = AT_distSphere([52 31 0], 13.4, [35 42 0], [139 46 0], earth.r)
+// Distance between Berlin and Rio de Janeiro on earth (pole flattening incl.) Thaddeus Vincenty method is used for calculation
+[dist] = AT_distSphere([52 31 0], [13 24 0], -22.971, [-43 10 56])",Calculate the distance in m between two points specified with latitude and longitude on a perfect sphere when a radius is committed (Orthodrome method). W/o radius committed the pole flattened earth is assumed and the more accurate Thaddeus Vincenty method is used for calculation (accuracy: 50m).
 AT_earthCurveHeight,Calculates how much a distant object is obscured by the earth's curvature,"h1    : Eye height in m, 
 dist  : target distance in m
 refr:  terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.","h2: target hidden height in m

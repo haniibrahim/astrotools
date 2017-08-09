@@ -1,6 +1,6 @@
 function [v] = AT_fallvelo(h, a)
     //
-    // Calculates the fall velocity of a body at a particular height
+    // Calculates the fall velocity of a body at a particular height in vaccum
     //
     // CALLING SEQUENCES
     // v = AT_fallvelo(h, a)
