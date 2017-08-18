@@ -34,7 +34,7 @@ function res = AT_isAstroconst(noErrMsg)
     if ~exists("AT_astroconst_loaded") & (noErrMsg == %F | noErrMsg == 0) then 
         error(1101, "AT_astrocont() not loaded! Needed constants not available. Type ""call AT_astroconst()"" for loading");
         res = %F;
-    elseif ~exists("AT_astroconst_loaded1") & (noErrMsg == %T | noErrMsg == 1) then
+    elseif ~exists("AT_astroconst_loaded") & (noErrMsg == %T | noErrMsg == 1) then
         res = %F;
     elseif exists("AT_astroconst_loaded") then
         res = %T;
