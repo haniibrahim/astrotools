@@ -17,6 +17,10 @@ F_cent = AT_centrifugal(80, earth.r, v=463) // Centrifugal force at earth's equa
 F_cent = AT_centrifugal(80, earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)",Calculates the centrifugal force for an given track OR angular speed. (Make use of key=value paramezer commitment)
 AT_checkAstroconst,Checks if AT_astroconst() was executed to provide constants,none,Displays error message if function AT_astroconst() was not executed for poviding constants,AT_checkAstroconst(),
 AT_checkCelestlab,Checks if Toolbox Celestlab is installed and loaded,none,Displays error message if tollbox Celeslab is not present,AT_checkCelestlab(),Check if Toolbox Celestlab was loaded. If not a error message is displayed and terminates the script or function.
+AT_circArcLength,Calculates the circular arc length of an appropriate tangent,"tanLen:   Length of the tangent in m
+r:        Radius of the sphere in m (OPTIONAL)
+          If not committed r:=earth's mean radius","arcLen:   Length of the cirular arc ""under"" the tangent","[arclen] = AT_circArcLength(10000)
+[arclen] = AT_circArcLength(10000, moon.r)","Its main purpose is to determine the difference of a distance on a plane in comparison to a sphere (earth). Means, a 1000m straight distance on a plane is eqzual to 999.99999m on a sphere (circular arc)"
 AT_circumEllipse,Circumference of an ellipse (Ramanujan approximation),"aph: apogee in m (distance to the greatest point in an elliptical orbit)
 Per: perigee in m (distance to the least point in an elliptical orbit)",U:   circumference of ellipse in m,"[U]=AT_circumEllipse(earth.aph, earth.per)",Calculate the circumfence of an ellipse (elliptical orbit) by passing the distances of the least and the greatest points in the orbit corresponding to Ramanujan approximation.Src: https://www.mathematik.ch/anwendungenmath/ellipsenumfang/
 AT_circumLat,Calculates the cirumference of a sphere at a certain latitude,"lat: latitude in degrees (Â°)
@@ -28,6 +32,13 @@ day  : day as a number (1 .. 31),
 h: hour (0..23), 
 m: minute (0..59), 
 s: second (0..59)","AT_currentday2date(64, 2016)","The current day starts with 1  => Jan., 1st = 1; Dec., 31st = 365 (normal year), 366 (leap year)"
+AT_curveHeight,"Calculates how much a distant object is obscured by a sphere‘s curvature (e.g. earth, moon, etc.)","h0:   Eye level in m
+dist: Object distance in m
+refr: Terrestrial refraction (OPTIONAL), 1.13 is common 
+r:    Radius of the sphere (OPTIONAL)
+      if not committed r:=earth's mean radius","h1:   Object obscured in m
+hrz:  Distance to horizon","[hiddenHeight, distHorizon] = AT_curveHeight(1.6, 50000, 1.13)
+[hiddenHeight, distHorizon] = AT_curveHeight(1.6, 50000,, moon.r)","Calculates how much a distant object is obscured by curvature of a sphere (e.g. earth). If r is not committed the mean radius of earth is set. If ""refr"" is not committed no refraction is considered. The atmospheric refraction can vary a lot but 1.13 is a common value. If you want to commit a radius you can leave refr blank (see 2nd example). It is a general form of AT_earthCurveHeight."
 AT_date2currentday,Convert date to current day of the year,"year: year as 4-digit number (e.g. 2016), 
 month: month as a number (1 .. 12), 
 day : day as a number (1 .. 31), 
