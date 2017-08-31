@@ -19,7 +19,7 @@ Astrotools works on all platforms Scilab supports (Windows, Linux, macOS).
  2. Load all sci-files into Scilab by typing  `getd('/path/to/astrotools-sci-files/')` in the Scilab console
  3. To use the physical and astromical constants, type `AT_astroconst()` in the Scilab console. 
 
->E.g. to get the radius of the earth you get it by `earth.r`. Open the file `AT_astroconst.sci` for details.
+>E.g. to get the radius of the earth you get it by `%earth.r`. Open the file `AT_astroconst.sci` for details.
 
 **Get started:**
 
@@ -28,7 +28,7 @@ Astrotools works on all platforms Scilab supports (Windows, Linux, macOS).
 getd('/path/to/astrotools-sci-files')
 AT_astroconst()
 // calculation
-AT_gravity(earth.mass, earth.r, 400000) // Gravity @ISS in m/s²
+AT_gravity(%earth.mass, %earth.r, 400000) // Gravity @ISS in m/s²
 ```
 
 **Easy initialization:**

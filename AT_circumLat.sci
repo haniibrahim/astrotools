@@ -19,13 +19,13 @@ function [U] = AT_circumLat(lat, r)
     //
     // EXAMPLES
     // U = AT_circumLat(52.5) // Circumfence of the earth at Berlin, Germany
-    // U = AT_circumLat(52.5, earth.r) // the same as above
+    // U = AT_circumLat(52.5, %earth.r) // the same as above
     //
     inarg = argn(2);
     if inarg > 2 | inarg < 1 then error(39); end
     if ~exists("r","local") then
         AT_checkAstroconst();
-        r = earth.r; // Radius of earth if no specific radius was committed
+        r = %earth.r; // Radius of earth if no specific radius was committed
     end
     U = 2 .* %pi .* cos(lat*%pi/180) .* r;
 endfunction

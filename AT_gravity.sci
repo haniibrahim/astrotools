@@ -17,7 +17,7 @@ function  [grav] = AT_gravity(m, r, h)
     // above an massive body
     //
     // EXAMPLES
-    // gravIss = AT_gravity(earth.mass, earth.r, 400000) // Gravity on ISS
+    // gravIss = AT_gravity(%earth.mass, %earth.r, 400000) // Gravity on ISS
     //
     inarg = argn(2);
     if inarg > 3 | inarg < 3 then error(39); end
@@ -27,5 +27,5 @@ function  [grav] = AT_gravity(m, r, h)
         error("AT_astroconst() is not available, call AT_astroconst()")
     end
 
-    grav = gen.G .* m ./ (r+h).^2;
+    grav = %gen.G .* m ./ (r+h).^2;
 endfunction

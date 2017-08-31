@@ -22,8 +22,8 @@ function [F] = AT_centrifugal(m, r, v, o)
     //
     // EXAMPLES
     // AT_astroconst();
-    // F_cent = AT_centrifugal(80, earth.r, v=463) // Centrifugal force at earth's equator (track speed used)
-    // F_cent = AT_centrifugal(80, earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)
+    // F_cent = AT_centrifugal(80, %earth.r, v=463) // Centrifugal force at earth's equator (track speed used)
+    // F_cent = AT_centrifugal(80, %earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)
     //
     inarg = argn(2);
     if inarg > 3 | inarg < 3 then error(39); end

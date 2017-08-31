@@ -26,13 +26,13 @@ function [v] = AT_escSpeed(m,r,h)
     // from the Earth's equator to the east requires an initial velocity of about 
     // 10.735 km/s relative to Earth to escape whereas a rocket launched tangentially
     // from the Earth's equator to the west requires an initial velocity of about 
-    // 11.665 km/s relative to Earth. The surface velocity decreases with the cosine 
+    // 11.665 km/s relative to earth. The surface velocity decreases with the cosine 
     // of the geographic latitude, so space launch facilities are often located as 
     // close to the equator as feasible, e.g. the American Cape Canaveral 
     // (latitude 28°28' N) and the French Guiana Space Centre (latitude 5°14' N).
     //
     // EXAMPLES
-    // esc = AT_escSpeed(earth.mass, earth.r, 0) // escape vel. from the earth @sea level
+    // esc = AT_escSpeed(%earth.mass, %earth.r, 0) // escape vel. from the earth @sea level
     //
     inarg = argn(2);
     if inarg > 3 | inarg < 3 then error(39); end

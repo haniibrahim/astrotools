@@ -22,13 +22,13 @@ function [arclen] = AT_circArcLength(tanLen, r)
     //
     // EXAMPLES
     // [arclen] = AT_circArcLength(10000)
-    // [arclen] = AT_circArcLength(10000, moon.r)
+    // [arclen] = AT_circArcLength(10000, %moon.r)
     // 
 
     inarg = argn(2); // number of parameters/arguments
     if inarg < 1 | inarg >2 then error(39); end
     if inarg == 1 then
-        r = earth.r;
+        r = %earth.r;
     end
     
     // Alpha angle of the right triangle which is spanned via center 

@@ -14,7 +14,7 @@ function AT_astroconst(silence)
     //
     // DESCRIPTION
     // Calling "AT_astroconst" will provide astronomic and physical 
-    // constants as structs, e.g. mass off the earth as "earth.mass"
+    // constants as structs, e.g. mass off the earth as "%%earth.mass"
     // It makes sometimes use of Celestlab's constants. 
     //
     // [body].mass      Mass in kg
@@ -40,9 +40,9 @@ function AT_astroconst(silence)
     // AT_astroconst(%T)
     // AT_astroconst()
     // // getting some constants
-    // earth.mass // mass of the earth in kg
-    // earth.r    // mean radius of the earth in m
-    // moon.g     // mean gravity of the moon in m/s^2
+    // %earth.mass // mass of the earth in kg
+    // %earth.r    // mean radius of the earth in m
+    // %moon.g     // mean gravity of the moon in m/s^2
     //
     
     L0 = "";
@@ -61,14 +61,14 @@ function AT_astroconst(silence)
     end
     
     // Check for Celestlab
-    AT_isCelestlab();
+    //AT_isCelestlab();
     
     AT_astroconst_loaded = 1;
     
     // sun constants
-    sun = struct (..
+    %sun = struct (..
     "mass", 1.9884e30, ..   // Mass in kg
-    "mass_diff", 2e26, ..   // fluctuating mass in kg => sun.mass +/- sun.mass_diff
+    "mass_diff", 2e26, ..   // fluctuating mass in kg => %sun.mass +/- %sun.mass_diff
     "vol", 1.41e27, ..      // Volume im m^3
     "r", 696342e3, ..       // Mean radius in m
     "obla", CL_dataGet("body.Sun.obla"), .. // Oblateness
@@ -78,7 +78,7 @@ function AT_astroconst(silence)
     );
 
     // Earth constants
-    earth = struct( .. 
+    %earth = struct( .. 
     "mass", 5.97237e24, ..  // Mass in kg
     "vol", 1.08321e15, ..   // Volume in m^3
     "r", 6.371e6, ..        // Mean radius in m
@@ -97,7 +97,7 @@ function AT_astroconst(silence)
     "", 0 .. 
     );
     // Moon constants
-    moon = struct( .. 
+    %moon = struct( .. 
     "mass",7.342e22, ..      // Mass in kg
     "vol", 2.1958e19, ..     // Volume in m^3
     "r", 1738e3 , ..         // Mean radius in m 
@@ -117,10 +117,10 @@ function AT_astroconst(silence)
     "", 0 .. 
     );
     //General constants
-    gen = struct( ..
+    %gen = struct( ..
     "G", CL_dataGet("gravCst"), .. // Gravity constant in m^3/(kg * s^2) or in Nm^2/kg^2
     "c", CL_dataGet("lightSpeed"), .. // lightspeed in vacuum in m/s
-    "AE", earth.dist, ..    // Astronomic unit
+    "AE", %earth.dist, ..    // Astronomic unit
     "R", 8.3144598, ..      // Universal gas constant in J/(mol*K)
     "R_air", 287.0578987, ..// Special gas constant for dry air in J/(kg*K)
     "", 0 ..

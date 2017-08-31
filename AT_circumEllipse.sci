@@ -17,7 +17,7 @@ function [U]=AT_circumEllipse(aph, per)
     // Src: https://www.mathematik.ch/anwendungenmath/ellipsenumfang/
     //
     // EXAMPLES
-    // [U]=AT_circumEllipse(earth.aph, earth.per)
+    // [U]=AT_circumEllipse(%earth.aph, %earth.per)
     // 
 
     inarg = argn(2); // number of parameters/arguments

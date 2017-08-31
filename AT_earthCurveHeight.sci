@@ -39,7 +39,7 @@ function [h1, hrz] = AT_earthCurveHeight(h0, dist, refr)
 
     AT_checkAstroconst();
 
-    R = earth.r;
+    R = %earth.r;
     hrz = sqrt(h0 .^ 2 + 2 .* R .* h0) .* refr;
 
     if hrz >= dist then // When target distance is within horizon distance

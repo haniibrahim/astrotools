@@ -32,17 +32,17 @@ function [h1, hrz] = AT_curveHeight(h0, dist, refr, r)
     // of 13% was considered. It is a general form of AT_earthCurveHeight.
     //
     // [hiddenHeight, distHorizon] = AT_curveHeight(1.6, 50000, 1.13)
-    // [hiddenHeight, distHorizon] = AT_curveHeight(1.6, 50000,, moon.r)
+    // [hiddenHeight, distHorizon] = AT_curveHeight(1.6, 50000,, %moon.r)
     //
 
     inarg = argn(2);
     if inarg > 4 | inarg < 2 then error(39); end
     if inarg == 2 then 
         refr = 1; // No terrestrial refraction
-        r = earth.r; // Earth's mean radius
+        r = %earth.r; // Earth's mean radius
     end
     if inarg == 3 then 
-        r = earth.r; // Earth's mean radius
+        r = %earth.r; // Earth's mean radius
     end
     if ~exists("refr") then refr = 1; end
     if refr == 0 then 

@@ -26,8 +26,8 @@ function [v] = AT_orbitalspeed(r, varargin)
     // On circular orbits a is equal to r.
     //
     // EXAMPLES
-    // v = AT_orbitalspeed(earth.r + 4e5, earth.mass) // Orbital speed of ISS
-    // v = AT_orbitalspeed(earth.per, earth.dist, sun.mass, earth.mass) // Orbital speed of the earth at perihelion
+    // v = AT_orbitalspeed(%earth.r + 4e5, %earth.mass) // Orbital speed of ISS
+    // v = AT_orbitalspeed(%earth.per, %earth.dist, %sun.mass, %earth.mass) // Orbital speed of the earth at perihelion
     //
     inarg = argn(2);
     if inarg > 4 | inarg < 2 then error(39); end
@@ -49,6 +49,6 @@ function [v] = AT_orbitalspeed(r, varargin)
     if ~exists("AT_astroconst_loaded") then 
         error("AT_astroconst() is not available, call AT_astroconst()")
     end
-    v = sqrt(gen.G .* (M + m) .* (2 ./ r - 1 ./ a));
+    v = sqrt(%gen.G .* (M + m) .* (2 ./ r - 1 ./ a));
     return;
 endfunction

@@ -36,7 +36,7 @@ function [dist] = AT_distSphere(latA, longA, latB, longB, r)
     // // Distance between Berlin and Tokio when earth is a perfect sphere, 
     // // Orthodrome method is used for calculation
     // [dist] = AT_distSphere(52.517, 13.4, 35.7, 139.767)
-    // [dist] = AT_distSphere([52 31 0], 13.4, [35 42 0], [139 46 0], earth.r)
+    // [dist] = AT_distSphere([52 31 0], 13.4, [35 42 0], [139 46 0], %earth.r)
     // // Distance between Berlin and Rio de Janeiro on earth (pole flattening incl.)
     // // Thaddeus Vincenty method is used for calculation
     // [dist] = AT_distSphere([52 31 0], [13 24 0], -22.971, [-43 10 56])
@@ -66,7 +66,7 @@ function [dist] = AT_distSphere(latA, longA, latB, longB, r)
         S = (sin(G))^2 .* (cos(l))^2 + (cos(F))^2 .* (sin(l))^2;
         C = (cos(G))^2 .* (cos(l))^2 + (sin(F))^2 .* (sin(l))^2;
         w = atan(sqrt(S ./ C));
-        D = 2 .* w .* earth.r_eq;
+        D = 2 .* w .* %earth.r_eq;
         
         T = sqrt(S .* C) ./ w;
         H1 = (3 .* T -1) ./ (2 .* C);

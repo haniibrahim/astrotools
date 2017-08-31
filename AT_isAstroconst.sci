@@ -17,7 +17,7 @@ function res = AT_isAstroconst(noErrMsg)
     // Checks if function AT_astroconst() was called which provide 
     // serveral natural, material and object constants, as radius of 
     // the earth etc. The constants are available as structs, e.g. 
-    // earth.r is the mean radius of the earth.
+    // %earth.r is the mean radius of the %earth.
     //
     // This function is used to check for the existance of these constants 
     // before usage.

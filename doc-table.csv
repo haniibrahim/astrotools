@@ -4,7 +4,7 @@ ap_g: aperature for green light (lamda=555nm) in m,
 ap_b: aperature of blue light (lamda=400nm) in m","[red, green, blue] = AT_aperature(1/3600) // aperature for 1"" resolution","Calculates the needed aperatur of an telecope to reach a given resolution in grad (°) for three wave length (red=656nm, green=555nm, blue=400nm) in m. The results are valid for an perfect optic and sky. Getting a more realistic result by multiplicate the results with 1.22. "
 AT_apparentSize,Calculates the visual angle (angle of sight) or apparent size of an observed object in the distance,"obj_size: Real size of the object in the distant in m, 
 dist:     Distance from the observer to the object in m","pp_size: Apparent size, visual angle or parallax in °","AT_astroconst(); 
-AppSize = AT_visualAngle(moon.r*2, moon.dist) // Apparent size of the moon","Calculates the visual angle (angle of sight) or apparent size of an observed object in the distance. 
+AppSize = AT_visualAngle(%moon.r*2, %moon.dist) // Apparent size of the moon","Calculates the visual angle (angle of sight) or apparent size of an observed object in the distance. 
 The moon has a distance of 400,000km and a size of 3,500km. The apparent size is 0.5°."
 AT_atmosphAdsorbCoeff,Atmosheric adsorption coefficient,"dist  : Visual distance in m
 ",sigma:  Atmosheric adsorption coefficient in m**(-1),AT_atmosphAdsorbCoeff(10.3),
@@ -13,19 +13,19 @@ r: Radius in m,
 v: Track speed in m/s (as key=value), 
 o: Angular speed in °/s (as key=value)
 (just one of the latter)",F: Centrifugal force in N,"AT_astroconst(); 
-F_cent = AT_centrifugal(80, earth.r, v=463) // Centrifugal force at earth's equator (track speed used); 
-F_cent = AT_centrifugal(80, earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)",Calculates the centrifugal force for an given track OR angular speed. (Make use of key=value paramezer commitment)
+F_cent = AT_centrifugal(80, %earth.r, v=463) // Centrifugal force at earth's equator (track speed used); 
+F_cent = AT_centrifugal(80, %earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)",Calculates the centrifugal force for an given track OR angular speed. (Make use of key=value paramezer commitment)
 AT_checkAstroconst,Checks if AT_astroconst() was executed to provide constants,none,Displays error message if function AT_astroconst() was not executed for poviding constants,AT_checkAstroconst(),
 AT_checkCelestlab,Checks if Toolbox Celestlab is installed and loaded,none,Displays error message if tollbox Celeslab is not present,AT_checkCelestlab(),Check if Toolbox Celestlab was loaded. If not a error message is displayed and terminates the script or function.
 AT_circArcLength,Calculates the circular arc length of an appropriate tangent,"tanLen:   Length of the tangent in m
 r:        Radius of the sphere in m (OPTIONAL)
           If not committed r:=earth's mean radius","arcLen:   Length of the cirular arc ""under"" the tangent","[arclen] = AT_circArcLength(10000)
-[arclen] = AT_circArcLength(10000, moon.r)","Its main purpose is to determine the difference of a distance on a plane in comparison to a sphere (earth). Means, a 1000m straight distance on a plane is eqzual to 999.99999m on a sphere (circular arc)"
+[arclen] = AT_circArcLength(10000, %moon.r)","Its main purpose is to determine the difference of a distance on a plane in comparison to a sphere (earth). Means, a 1000m straight distance on a plane is eqzual to 999.99999m on a sphere (circular arc)"
 AT_circumEllipse,Circumference of an ellipse (Ramanujan approximation),"aph: apogee in m (distance to the greatest point in an elliptical orbit)
-Per: perigee in m (distance to the least point in an elliptical orbit)",U:   circumference of ellipse in m,"[U]=AT_circumEllipse(earth.aph, earth.per)",Calculate the circumfence of an ellipse (elliptical orbit) by passing the distances of the least and the greatest points in the orbit corresponding to Ramanujan approximation.Src: https://www.mathematik.ch/anwendungenmath/ellipsenumfang/
+Per: perigee in m (distance to the least point in an elliptical orbit)",U:   circumference of ellipse in m,"[U]=AT_circumEllipse(%earth.aph, %earth.per)",Calculate the circumfence of an ellipse (elliptical orbit) by passing the distances of the least and the greatest points in the orbit corresponding to Ramanujan approximation.Src: https://www.mathematik.ch/anwendungenmath/ellipsenumfang/
 AT_circumLat,Calculates the cirumference of a sphere at a certain latitude,"lat: latitude in degrees (°)
 r:   Radius of the sphere, e.g radius of the earth (OPTIONAL), when r is not committed r = mean radius of the earth","U:   Circumference of the sphere with the radius ""r"" at latitude ""lat""","U = AT_circumLat(52.5) // Circumfence of the earth at Berlin, Germany
-U = AT_circumLat(52.5, earth.r) // the same as above",Calculate the circumfence of a sphere at a certain latitude. E.g. to get the circumfence of the earth at your home town to calculate the local orbital speed
+U = AT_circumLat(52.5, %earth.r) // the same as above",Calculate the circumfence of a sphere at a certain latitude. E.g. to get the circumfence of the earth at your home town to calculate the local orbital speed
 AT_currentday2date,Convert current day of the year to month and day,"cday: current day of the year (1 .. 365 / 366 leap year), 
 year: year as 4-digit number (e.g. 2016)","month: month as a number (1 .. 12), 
 day  : day as a number (1 .. 31),
@@ -38,7 +38,7 @@ refr: Terrestrial refraction (OPTIONAL), 1.13 is common
 r:    Radius of the sphere (OPTIONAL)
       if not committed r:=earth's mean radius","h1:   Object obscured in m
 hrz:  Distance to horizon","[hiddenHeight, distHorizon] = AT_curveHeight(1.6, 50000, 1.13)
-[hiddenHeight, distHorizon] = AT_curveHeight(1.6, 50000,, moon.r)","Calculates how much a distant object is obscured by curvature of a sphere (e.g. earth). If r is not committed the mean radius of earth is set. If ""refr"" is not committed no refraction is considered. The atmospheric refraction can vary a lot but 1.13 is a common value. If you want to commit a radius you can leave refr blank (see 2nd example). It is a general form of AT_earthCurveHeight."
+[hiddenHeight, distHorizon] = AT_curveHeight(1.6, 50000,, %moon.r)","Calculates how much a distant object is obscured by curvature of a sphere (e.g. earth). If r is not committed the mean radius of earth is set. If ""refr"" is not committed no refraction is considered. The atmospheric refraction can vary a lot but 1.13 is a common value. If you want to commit a radius you can leave refr blank (see 2nd example). It is a general form of AT_earthCurveHeight."
 AT_date2currentday,Convert date to current day of the year,"year: year as 4-digit number (e.g. 2016), 
 month: month as a number (1 .. 12), 
 day : day as a number (1 .. 31), 
@@ -51,7 +51,7 @@ latB: Latitude of the second point (B) in decimal degrees or vector of DMS [deg 
 longB: Longitude of the second point (B) in decimal degrees or vector of DMS [deg arcmin arcsec] (Lat and Long are positive when N and E, and negative when S and W)
 R: Radius of the sphere in m (OPTIONAL) if specified the calculation method ""Orthodrome"" is used (for perfect sphere). If not specified the calculation method from Thaddeus  Vincenty is used for a more accurate result on earth (accuracy: approx. 50m)",dist:   Distance of point A to B in m,"// Distance between Berlin and Tokio when earth is a perfect sphere, Orthodrome method is used for calculation
 [dist] = AT_distSphere(52.517, 13.4, 35.7, 139.767)
-[dist] = AT_distSphere([52 31 0], 13.4, [35 42 0], [139 46 0], earth.r)
+[dist] = AT_distSphere([52 31 0], 13.4, [35 42 0], [139 46 0], %earth.r)
 // Distance between Berlin and Rio de Janeiro on earth (pole flattening incl.) Thaddeus Vincenty method is used for calculation
 [dist] = AT_distSphere([52 31 0], [13 24 0], -22.971, [-43 10 56])",Calculate the distance in m between two points specified with latitude and longitude on a perfect sphere when a radius is committed (Orthodrome method). W/o radius committed the pole flattened earth is assumed and the more accurate Thaddeus Vincenty method is used for calculation (accuracy: 50m).
 AT_earthCurveHeight,Calculates how much a distant object is obscured by the earth's curvature,"h1    : Eye height in m, 
@@ -61,7 +61,7 @@ hrz: distance to the horizon in m","[hiddenHeight, distHorizon] = AT_earthCurveH
 AT_escSpeed,Escape speed from an non-rotating massive body at a certain height,"m:    Mass of the body in kg (e.g. planet), 
 r:    Radius of the body in m (e.g. radius of a planet), 
 h:    Heigth of the object above the body in m (e.g. height of an artificial satellite)",v:    Escape velocity in m/s,"AT_astroconst(); 
-AT_escSpeed(earth.mass, earth.r, 0) // escape vel. from the earth @sea level",Calculates minimum speed needed for an object to escape from a massive body from a definite height. But rotating of the body is unconsidered.
+AT_escSpeed(%earth.mass, %earth.r, 0) // escape vel. from the earth @sea level",Calculates minimum speed needed for an object to escape from a massive body from a definite height. But rotating of the body is unconsidered.
 AT_exitPupil,Exit pupil of an eye piece,"lens_dia    : lens diameter in m(mm), 
 lens_foclen : lens focal length in m(mm)",exitPupil   = exit pupil of the eye piece in question m(mm),"AT_exitPupil(150, 1200, 25)",
 AT_falltime,Calculates the fall time of a body at a particular height in vacuum,"h: Height in m
@@ -70,12 +70,12 @@ AT_fallvelo,Fall velocity,"h : Height in m,
 A : Acceleration in m/s² (optional), if not specified a : 9.80665",v: fall velocity in m/s,AT_fallvelo(40000),
 AT_gravity,Gravity effected on an object above a massive body,"m : Mass of the body in kg, 
 r : Radius of the body in m, 
-h : Height above the body in m",,"AT_astroconst(); AT_gravity(earth.mass, earth.r, 400000) // Gravity @ISS",
+h : Height above the body in m",,"AT_astroconst(); AT_gravity(%earth.mass, %earth.r, 400000) // Gravity @ISS",
 AT_isAstroconst,Checks if constants from AT-astroconst() are available,"noErrMsg:  Boolean who specifies if a error message should be displayed or not:
                  %F or 0: error message will be dispayed if neccessary (standard)
                  %T or 1: no error message, just output argument","res:       %T if AT_astroconst() was called, %F if not","res = AT_isAstroconst()
 res = AT_isAstroconst(%T) // suppress error message
-Res = AT_isAstroconst(1)  // suppress error message","Checks if function AT_astroconst() was called which provide serveral natural, material and object constants, as radius of the earth etc. The constants are available as structs, e.g. earth.r is the mean radius of the earth
+Res = AT_isAstroconst(1)  // suppress error message","Checks if function AT_astroconst() was called which provide serveral natural, material and object constants, as radius of the earth etc. The constants are available as structs, e.g. %earth.r is the mean radius of the earth
 This function is used to check for the existance of these constants before usage."
 AT_isCelestlab,Checks if CelestLab toolbox is installed and loaded,"noErrMsg:  Boolean who specifies if a error message should be displayed or not:
    %F or 0: error message will be dispayed if neccessary (standard)
@@ -87,8 +87,8 @@ AT_orbitalspeed,Orbital speed of an object orbitting a body at a particular dist
 a : length of the semi-major axis of the elliptical orbit. For the Earth at perihelion in m (optional)
 M : Mass of the heavier object in kg, 
 m: Mass of the lighter object in kg (optional)",v: orbital speed in m/s,"AT_astroconst(); 
-AT_orbitalspeed(earth.r + 4e5, earth.mass) // Orbital speed of ISS (circular orbit); 
-AT_orbitalspeed(earth.per, earth.dist, sun.mass, earth.mass) // Orbital speed of the earth @perihelion (elliptical orbit)","Calculate the oribital speed of an object (e.g. satellite) orbitting a massive body (planet) at a particular height.
+AT_orbitalspeed(%earth.r + 4e5, %earth.mass) // Orbital speed of ISS (circular orbit); 
+AT_orbitalspeed(%earth.per, %earth.dist, %sun.mass, %earth.mass) // Orbital speed of the earth @perihelion (elliptical orbit)","Calculate the oribital speed of an object (e.g. satellite) orbitting a massive body (planet) at a particular height.
 The mass (m) of the lighter object can be omitted if the differenz to the heavier one is huge.
 On circular orbits a is equal to r."
 AT_realSize,Calculates the real size of an object in the distance from the apparent size,"app_size: Apparent size of the object in the distant in °, 
@@ -107,4 +107,4 @@ AT_visualRange,Maximum visual range on a spherical body,"height1 : height of eye
 height2 : height of distant object in m, 
 r: Radius of spherical body in m, e.g. planet (OPTIONAL), set to the mean radius of earth if not committed
 refr : terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",range = maximium visual range of sight in m,"AT_astroconst(); 
-range = AT_visualRange(1.5, 100, earth.r, 1.13) // The top of an object of 100m height can be observed by an observer with a eye level of 1.5m to a distance of approx. 45.3km when a terrestrial refraction of 13% is taken into account.",Calculates to which distance the top of an object of a specific height can be observed on a speherical body by an observer of an itself specific height.
+range = AT_visualRange(1.5, 100, %earth.r, 1.13) // The top of an object of 100m height can be observed by an observer with a eye level of 1.5m to a distance of approx. 45.3km when a terrestrial refraction of 13% is taken into account.",Calculates to which distance the top of an object of a specific height can be observed on a speherical body by an observer of an itself specific height.
