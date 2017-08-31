@@ -15,6 +15,7 @@ function AT_astroconst(silence)
     // DESCRIPTION
     // Calling "AT_astroconst" will provide astronomic and physical 
     // constants as structs, e.g. mass off the earth as "earth.mass"
+    // It makes sometimes use of Celestlab's constants. 
     //
     // [body].mass      Mass in kg
     // [body].vol       Volume in m^3
@@ -59,6 +60,9 @@ function AT_astroconst(silence)
         end 
     end
     
+    // Check for Celestlab
+    AT_isCelestlab();
+    
     AT_astroconst_loaded = 1;
     
     // sun constants
@@ -67,6 +71,7 @@ function AT_astroconst(silence)
     "mass_diff", 2e26, ..   // fluctuating mass in kg => sun.mass +/- sun.mass_diff
     "vol", 1.41e27, ..      // Volume im m^3
     "r", 696342e3, ..       // Mean radius in m
+    "obla", CL_dataGet("body.Sun.obla"), .. // Oblateness
     "g", 274, ..            // Mean gravity on surface in m/s^2
     "rho", 1408, ..         // Mean density in kg/m^3
     "", 0 ..
@@ -77,9 +82,10 @@ function AT_astroconst(silence)
     "mass", 5.97237e24, ..  // Mass in kg
     "vol", 1.08321e15, ..   // Volume in m^3
     "r", 6.371e6, ..        // Mean radius in m
-    "r_eq", 6.3781e6, ..    // Equatorial radius in m
+    "r_eq", CL_dataGet("eqRad"), .. // Equatorial radius in m (EGM96s gravity model)
     "r_pol", 6.3568e6, ..   // Polar radius in m
-    "g", 9.8066, ..         // Mean gravity in m/s^2
+    "obla", CL_dataGet("obla"), .. // oblateness (WGS84 ellipsoid)
+    "g", CL_dataGet("g0"), ..  // Mean gravity in m/s^2
     "p", 1013.25, ..        // Surface pressure ("sea level") in hPa
     "rho", 5514, ..         // Mean density in kg/m^3
     "area", 5.10072e11, ..  // Surface area in m^2
@@ -87,7 +93,7 @@ function AT_astroconst(silence)
     "area_h2o",3.61132e11,.. // Surface area water in m^2
     "aph", 1.52100e11, ..    // Aphelion in m
     "per", 1.47095e11, ..    // Pherihelion in m 
-    "dist", 1.496e11, ..     // Mean distance from the sun in m
+    "dist", CL_dataGet("au"), ..  // Mean distance from the sun in m
     "", 0 .. 
     );
     // Moon constants
@@ -112,8 +118,8 @@ function AT_astroconst(silence)
     );
     //General constants
     gen = struct( ..
-    "G", 6.67408D-11, ..    // Gravity constant in m^3/(kg * s^2) or in Nm^2/kg^2
-    "c", 299792458, ..      // lightspeed in vacuum in m/s
+    "G", CL_dataGet("gravCst"), .. // Gravity constant in m^3/(kg * s^2) or in Nm^2/kg^2
+    "c", CL_dataGet("lightSpeed"), .. // lightspeed in vacuum in m/s
     "AE", earth.dist, ..    // Astronomic unit
     "R", 8.3144598, ..      // Universal gas constant in J/(mol*K)
     "R_air", 287.0578987, ..// Special gas constant for dry air in J/(kg*K)

@@ -29,12 +29,12 @@ function celestlab = AT_isCelestlab(noErrMsg)
     if inarg > 1 then error(39); end
     if inarg == 0 then noErrMsg = %F; end // If no noErrMsg committed noErrMsg = false
     
-    if  atomsIsInstalled("celestlab1") then
+    if  atomsIsInstalled("celestlab") then
         celestlab = %T;
-    elseif ~atomsIsInstalled("celestlab1") & (noErrMsg == %F | noErrMsg == 0) then
+    elseif ~atomsIsInstalled("celestlab") & (noErrMsg == %F | noErrMsg == 0) then
         celestlab = %F;
         error(1102,"Toolbox ""CelestLab"" is not availabe. Please install ""CelestLab"" via Atoms");
-    elseif ~atomsIsInstalled("celestlab1") & (noErrMsg == %T | noErrMsg == 1) then
+    elseif ~atomsIsInstalled("celestlab") & (noErrMsg == %T | noErrMsg == 1) then
         celestlab = %F;
     else
         error(42); // Wrong input argument
