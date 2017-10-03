@@ -54,10 +54,10 @@ R: Radius of the sphere in m (OPTIONAL) if specified the calculation method ""Or
 [dist] = AT_distSphere([52 31 0], 13.4, [35 42 0], [139 46 0], %earth.r)
 // Distance between Berlin and Rio de Janeiro on earth (pole flattening incl.) Thaddeus Vincenty method is used for calculation
 [dist] = AT_distSphere([52 31 0], [13 24 0], -22.971, [-43 10 56])",Calculate the distance in m between two points specified with latitude and longitude on a perfect sphere when a radius is committed (Orthodrome method). W/o radius committed the pole flattened earth is assumed and the more accurate Thaddeus Vincenty method is used for calculation (accuracy: 50m).
-AT_earthCurveHeight,Calculates how much a distant object is obscured by the earth's curvature,"h1    : Eye height in m, 
+AT_earthCurveHeight (DEPRECATED),Calculates how much a distant object is obscured by the earth's curvature,"h1    : Eye height in m, 
 dist  : target distance in m
 refr:  terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.","h2: target hidden height in m
-hrz: distance to the horizon in m","[hiddenHeight, distHorizon] = AT_earthCurveHeight(1.6, 50000, 1.13)",
+hrz: distance to the horizon in m","[hiddenHeight, distHorizon] = AT_earthCurveHeight(1.6, 50000, 1.13)",DEPRECATED: Use AT_curveHeight() instead.
 AT_escSpeed,Escape speed from an non-rotating massive body at a certain height,"m:    Mass of the body in kg (e.g. planet), 
 r:    Radius of the body in m (e.g. radius of a planet), 
 h:    Heigth of the object above the body in m (e.g. height of an artificial satellite)",v:    Escape velocity in m/s,"AT_astroconst(); 

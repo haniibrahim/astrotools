@@ -30,6 +30,9 @@ function [h1, hrz] = AT_earthCurveHeight(h0, dist, refr)
     //
     // [hiddenHeight, distHorizon] = AT_earthCurveHeight(1.6, 50000, 1.13)
     //
+    
+    // DEPRECATED message
+    warning("AT_earthCurveHeight() is marked as DEPRECATED. Use AT_curveHeigth() instead.");
 
     inarg = argn(2);
     if inarg > 3 | inarg < 2 then error(39); end

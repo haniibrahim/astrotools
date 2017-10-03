@@ -2,7 +2,7 @@
 
 Astronomy functions for [Scilab](http://www.scilab.org/). Some may based on the [CelestLab](https://atoms.scilab.org/toolboxes/celestlab/)-Toolbox from [CNES](https://cnes.fr/en) (French space agency).
 
-> Developed just for my own needs. Under permanent development. Use it if you find it helpful. No warranty, no service but bug reports welcome.
+> Developed just for my own needs. Under permanent development. Use it if you find it helpful. No warranty, no service but bug reports welcome. **Use it with Scilab 5.5.2 only.**
 
 Functions make use of [SI units](https://en.wikipedia.org/wiki/International_System_of_Units "") only.
 
@@ -39,9 +39,11 @@ Execute the `init.sce` script before you start calculating or after `clear()`. T
 
 ## Dependencies
 
-* [Scilab](http://www.scilab.org/) Application (tested with v5.5.2) 
+* [Scilab](http://www.scilab.org/) Application ( Scilab 5.5.2 only) 
 * [CelestLab](https://atoms.scilab.org/toolboxes/celestlab/) Toolbox
 * [uman](https://atoms.scilab.org/toolboxes/uman/2.1)  Toolbox (Recommended but not mandatory)
+
+**IMPORTANT NOTE:** Use Scilab 5.5.2 instead of version 6.0.0. The current Celestlab 3.2.1 is _not compatible_ with Scilab 6!
 
 ## Licence
 
