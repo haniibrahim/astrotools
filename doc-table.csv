@@ -103,6 +103,7 @@ p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R_e: Atmospheric re
 AT_resolution,Angular resolution of an optic (telescope),ap: aperature in m,"res_r: resolution of red light (lamda=656nm) in grad(°), 
 res_g: resolution of green light (lamda=555nm) in grad(°), 
 res_b: resolution of blue light (lamda=400nm) in grad(°)","[red, green, blue] = AT_resolution(0.15) // 150mm aperature","Calculates the angular resolution of an optic (telescope) for three wave length of light (red=656nm, green=555nm, blue=400nm) in grad (°). The results are valid for an perfect optic and sky. Getting a more realistic result by multiplicate the results with 1.22."
+AT_schwarzschild,Calculates the Schwarzschild radius of non-rotating objects,m: Mass of the object in kg,sr: Schwarzschild radius of the object,sr = AT_schwarzschild(%sun.mass) // Schwarzschild radius of the sun,Calculates the radius to which an object has to be comprimised that the escape speed is light speed (black holes). THIS FUNCTION IS VAILD FOR NON-ROTATION OBJECTS ONLY! This is equal to the event horizon in this case.
 AT_visualRange,Maximum visual range on a spherical body,"height1 : height of eye/instrument in m, 
 height2 : height of distant object in m, 
 r: Radius of spherical body in m, e.g. planet (OPTIONAL), set to the mean radius of earth if not committed
