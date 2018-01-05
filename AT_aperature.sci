@@ -6,14 +6,14 @@ function [ap_r, ap_g, ap_b] = AT_aperature(res)
     // [ap_r, ap_g, ap_b] = AT_aperature(res)
     //
     // PARAMETERS
-    // res:  resolution in grad (°)
+    // res:  resolution in degree (°)
     // ap_r: aperature for red light (lamda=656nm) in m
     // ap_g: aperature for green light (lamda=555nm) in m
     // ap_b: aperature of blue light (lamda=400nm) in m
     //
     // DESCRIPTION
     // Calculates the needed aperatur of an telecope to reach a given 
-    // resolution in grad (°) for three wave length (red=656nm, green=555nm, 
+    // resolution in degree (°) for three wave length (red=656nm, green=555nm, 
     // blue=400nm) in m.
     //
     // The results are valid for an perfect optic and sky. Getting a
@@ -32,7 +32,7 @@ function [ap_r, ap_g, ap_b] = AT_aperature(res)
     lam_r = 6.56e-4; // wave length red light in mm
     lam_g = 5.55e-4; // wave length green light in mm
     lam_b = 4e-4;   // wave length blue light in mm
-    const = 180 ./ %pi // rad => grad conversion
+    const = 180 ./ %pi // rad => degree conversion
     
     ap_r = lam_r .* const ./ (res .* 1e3);
     ap_g = lam_g .* const ./ (res .* 1e3);
