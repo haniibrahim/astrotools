@@ -91,8 +91,8 @@ AT_orbitalspeed(%earth.r + 4e5, %earth.mass) // Orbital speed of ISS (circular o
 AT_orbitalspeed(%earth.per, %earth.dist, %sun.mass, %earth.mass) // Orbital speed of the earth @perihelion (elliptical orbit)","Calculate the oribital speed of an object (e.g. satellite) orbitting a massive body (planet) at a particular height.
 The mass (m) of the lighter object can be omitted if the differenz to the heavier one is huge.
 On circular orbits a is equal to r."
-AT_realSize,Calculates the real size of an object in the distance from the apparent size,"app_size: Apparent size of the object in the distant in °, 
-dist:     Distance from the observer to the object in m",obj_size: Real size of the object in the distant in m,"obj_size = AT_realSize(0.19, 31e6) // Real size of galaxy M51",
+AT_realSize,Calculates the real size of an object in the distance from the apparent size,"app_size: Apparent size of the object in the distant in �, 
+dist:     Distance from the observer to the object in arbitrary unit",obj_size: Real size of the object in the same unit used for dist,"obj_size = AT_realSize(0.19, 31e6) // Real size of galaxy M51 in ly",
 AT_refraction_add,Atmospheric refraction of an apparent altitude,"h_s: apparent altitude of the astronomical body in °, 
 t:   temperatur in K (OPTIONAL), if not specified t=283K, 
 p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R:   Atmospheric refraction correction in °,AT_refraction_add(25),You have to add the value to a calculated/real altitude to get the the observed altitude
