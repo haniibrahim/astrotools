@@ -21,7 +21,7 @@ function [pos_ECI] = AT_getBodyPosECI(bname, cjd)
     // Src: http://www.bernd.ragutt.de/himmelsmechanik/sonnemondplaneten/
     //
     // EXAMPLES
-    // [pos_ECI] = AT_getBodyPos("Mars, 21915)
+    // [pos_ECI] = AT_getBodyPos("Mars", CL_dat_cal2cjd(2018,04,19,20,0,0))
     //
     inarg = argn(2); // number of parameters/arguments
     if inarg ~= 2 then error(39); end
