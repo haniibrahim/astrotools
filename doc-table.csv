@@ -1,42 +1,42 @@
 FUNCTION NAME,DESCRIPTION,INPUT,OUTPUT,EXAMPLE,NOTES
-AT_altazPos,Altitude and azimuth position of a celestial body viewed from earth,"cjd: TREF time scale - Modified (1950.0) julian day, 
+AT_altazPos,Altitude and azimuth position of a celestial body viewed from earth,"cjd: TREF time scale - Modified (1950.0) Julian day, 
 loc: Row vector of local elliptical (geodetic) coordinates, [longitude; latitude; altitude] in [deg;deg;m], 
 bname: Name of the celestial body (string, see below)
 Available bodies are: ""Mercury"", ""Venus"", ""Earth-Moon-bary"" (or ""EMB""), ""Mars"", ""Jupiter"", ""Saturn"", ""Uranus"", ""Neptune"", ""Pluto"", ""Moon"", ""Sun"", ""Earth"", ""solar-sys-bary"" (or ""SSB"")","alt: Position in altitude (elevation) [deg]
-az: Position in azimuth [deg]","alt,az]=AT_altazPos(CL_dat_cal2cjd(2008,10,25,15,30,0), [6.9;51.1;30],""Mars"")","Calculates the alitude and azimuth in degrees of a celestial body (planet of the solar system) using JPL's DE405 ephemerides viewed from topocentric position on earth. azimuth: 0° is north, 90° is east, 180° is west, 270° is west,  altitude: Angle in degree obove horizon. Src: http://www.bernd.ragutt.de/himmelsmechanik/sonnemondplaneten/"
-AT_aperature,Needed aperatur to reach given angular resolution of an optic (telescope),res:  resolution in degree (Â°),"ap_r: aperature for red light (lamda=656nm) in m, 
-ap_g: aperature for green light (lamda=555nm) in m, 
-ap_b: aperature of blue light (lamda=400nm) in m","[red, green, blue] = AT_aperature(1/3600) // aperature for 1"" resolution","Calculates the needed aperatur of an telecope to reach a given resolution in degree (Â°) for three wave length (red=656nm, green=555nm, blue=400nm) in m. The results are valid for an perfect optic and sky. Getting a more realistic result by multiplicate the results with 1.22. "
+az: Position in azimuth [deg]","alt,az]=AT_altazPos(CL_dat_cal2cjd(2008,10,25,15,30,0), [6.9;51.1;30],""Mars"")","Calculates the altitude and azimuth in degrees of a celestial body (planet of the solar system) using JPL's DE405 ephemerides viewed from topocentric position on earth. azimuth: 0deg is north, 90deg is east, 180deg is west, 270deg is west,  altitude: Angle in degree above horizon. Src: http://www.bernd.ragutt.de/himmelsmechanik/sonnemondplaneten/"
+AT_aperture,Needed aperture to reach given angular resolution of an optic (telescope),res:  resolution in degree,"ap_r: aperture for red light (lambda=656nm) in m, 
+ap_g: aperture for green light (lambda=555nm) in m, 
+ap_b: aperture of blue light (lambda=400nm) in m","[red, green, blue] = AT_aperture(1/3600) // aperture for 1"" resolution","Calculates the needed aperture of an telescope to reach a given resolution in degree  for three wave length (red=656nm, green=555nm, blue=400nm) in m. The results are valid for an perfect optic and sky. Getting a more realistic result by multiply the results with 1.22. "
 AT_apparentSize,Calculates the visual angle (angle of sight) or apparent size of an observed object in the distance,"obj_size: Real size of the object in the distant in m, 
-dist:     Distance from the observer to the object in m","pp_size: Apparent size, visual angle or parallax in Â°","AT_astroconst(); 
+dist:     Distance from the observer to the object in m","pp_size: Apparent size, visual angle or parallax in deg","AT_astroconst(); 
 AppSize = AT_visualAngle(%moon.r*2, %moon.dist) // Apparent size of the moon","Calculates the visual angle (angle of sight) or apparent size of an observed object in the distance. 
-The moon has a distance of 400,000km and a size of 3,500km. The apparent size is 0.5Â°."
-AT_atmosphAdsorbCoeff,Atmosheric adsorption coefficient,"dist  : Visual distance in m
-",sigma:  Atmosheric adsorption coefficient in m**(-1),AT_atmosphAdsorbCoeff(10.3),
+The moon has a distance of 400,000km and a size of 3,500km. The apparent size is 0.5deg."
+AT_atmosphAdsorbCoeff,Atmospheric adsorption coefficient,"dist  : Visual distance in m
+",sigma:  Atmospheric adsorption coefficient in m**(-1),AT_atmosphAdsorbCoeff(10.3),
 AT_centrifugal,Centrifugal force from track or angular speed,"m: Mass of the object in kg, 
 r: Radius in m, 
 v: Track speed in m/s (as key=value), 
-o: Angular speed in Â°/s (as key=value)
+o: Angular speed in deg/s (as key=value)
 (just one of the latter)",F: Centrifugal force in N,"AT_astroconst(); 
 F_cent = AT_centrifugal(80, %earth.r, v=463) // Centrifugal force at earth's equator (track speed used); 
-F_cent = AT_centrifugal(80, %earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)",Calculates the centrifugal force for an given track OR angular speed. (Make use of key=value paramezer commitment)
-AT_checkAstroconst,Checks if AT_astroconst() was executed to provide constants,none,Displays error message if function AT_astroconst() was not executed for poviding constants,AT_checkAstroconst(),
-AT_checkCelestlab,Checks if Toolbox Celestlab is installed and loaded,none,Displays error message if tollbox Celeslab is not present,AT_checkCelestlab(),Check if Toolbox Celestlab was loaded. If not a error message is displayed and terminates the script or function.
+F_cent = AT_centrifugal(80, %earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)",Calculates the centrifugal force for an given track OR angular speed. (Make use of key=value parameter commitment)
+AT_checkAstroconst,Checks if AT_astroconst() was executed to provide constants,none,Displays error message if function AT_astroconst() was not executed for providing constants,AT_checkAstroconst(),
+AT_checkCelestlab,Checks if Toolbox Celestlab is installed and loaded,none,Displays error message if toolbox CelestLab is not present,AT_checkCelestlab(),Check if Toolbox Celestlab was loaded. If not a error message is displayed and terminates the script or function.
 AT_circArcLength,Calculates the circular arc length of an appropriate tangent,"tanLen:   Length of the tangent in m
-r:        Radius of the sphere in m (OPTIONAL), if not committed r:=earth's mean radius","arcLen:   Length of the cirular arc ""under"" the tangent","[arclen] = AT_circArcLength(10000)
-[arclen] = AT_circArcLength(10000, %moon.r)","Its main purpose is to determine the difference of a distance on a plane in comparison to a sphere (earth). Means, a 1000m straight distance on a plane is eqzual to 999.99999m on a sphere (circular arc)"
+r:        Radius of the sphere in m (OPTIONAL), if not committed r:=earth's mean radius","arcLen:   Length of the circular arc ""under"" the tangent","[arclen] = AT_circArcLength(10000)
+[arclen] = AT_circArcLength(10000, %moon.r)","Its main purpose is to determine the difference of a distance on a plane in comparison to a sphere (earth). Means, a 1000m straight distance on a plane is equal to 999.99999m on a sphere (circular arc)"
 AT_circumEllipse,Circumference of an ellipse (Ramanujan approximation),"aph: apogee in m (distance to the greatest point in an elliptical orbit)
-Per: perigee in m (distance to the least point in an elliptical orbit)",U:   circumference of ellipse in m,"[U]=AT_circumEllipse(%earth.aph, %earth.per)",Calculate the circumfence of an ellipse (elliptical orbit) by passing the distances of the least and the greatest points in the orbit corresponding to Ramanujan approximation.Src: https://www.mathematik.ch/anwendungenmath/ellipsenumfang/
-AT_circumLat,Calculates the cirumference of a sphere at a certain latitude,"lat: latitude in degrees
-r:   Radius of the sphere, e.g radius of the earth (OPTIONAL), when r is not committed r = mean radius of the earth","U:   Circumference of the sphere with the radius ""r"" at latitude ""lat""","U = AT_circumLat(52.5) // Circumfence of the earth at Berlin, Germany
-U = AT_circumLat(52.5, %earth.r) // the same as above",Calculate the circumfence of a sphere at a certain latitude. E.g. to get the circumfence of the earth at your home town to calculate the local orbital speed
+Per: perigee in m (distance to the least point in an elliptical orbit)",U:   circumference of ellipse in m,"[U]=AT_circumEllipse(%earth.aph, %earth.per)",Calculate the circumference of an ellipse (elliptical orbit) by passing the distances of the least and the greatest points in the orbit corresponding to Ramanujan approximation.  https://www.mathematik.ch/anwendungenmath/ellipsenumfang/
+AT_circumLat,Calculates the circumference of a sphere at a certain latitude,"lat: latitude in degrees
+r:   Radius of the sphere, e.g radius of the earth (OPTIONAL), when r is not committed r = mean radius of the earth","U:   Circumference of the sphere with the radius ""r"" at latitude ""lat""","U = AT_circumLat(52.5) // Circumference of the earth at Berlin, Germany
+U = AT_circumLat(52.5, %earth.r) // the same as above",Calculate the circumference of a sphere at a certain latitude. E.g. to get the circumference of the earth at your home town to calculate the local orbital speed
 AT_currentday2date,Convert current day of the year to month and day,"cday: current day of the year (1 .. 365 / 366 leap year), 
 year: year as 4-digit number (e.g. 2016)","month: month as a number (1 .. 12), 
 day  : day as a number (1 .. 31),
 h: hour (0..23), 
 m: minute (0..59), 
 s: second (0..59)","AT_currentday2date(64, 2016)","The current day starts with 1  => Jan., 1st = 1; Dec., 31st = 365 (normal year), 366 (leap year)"
-AT_curveHeight,"Calculates how much a distant object is obscured by a sphereï¿½s curvature (e.g. earth, moon, etc.)","h0:   Eye level in m
+AT_curveHeight,"Calculates how much a distant object is obscured by a sphere’s curvature (e.g. earth, moon, etc.)","h0:   Eye level in m
 dist: Object distance in m
 refr: Terrestrial refraction (OPTIONAL), 1.13 is common 
 r:    Radius of the sphere (OPTIONAL)
@@ -49,11 +49,11 @@ day : day as a number (1 .. 31),
 h: hour (0..23), 
 m: minute (0..59), 
 s: second (0..59)","cday: current day of the year (1 .. 365, 366 when leap year)","AT_date2currentday(2017, 3, 10)","The current day starts with 1 => Jan., 1st = 1; Dec., 31st = 365 (normal year), 366 (leap year)"
-AT_distSphere,Distance on a perfect sphere or real earth via langitude and longitude,"latA: Latitude of the first point (A) in decimal degrees or vector of DMS [deg arcmin arcsec]
+AT_distSphere,Distance on a perfect sphere or real earth via latitude and longitude,"latA: Latitude of the first point (A) in decimal degrees or vector of DMS [deg arcmin arcsec]
 LongA: Longitude of the first point (A) in decimal degrees or vector of DMS [deg arcmin arcsec]
 latB: Latitude of the second point (B) in decimal degrees or vector of DMS [deg arcmin arcsec]
 longB: Longitude of the second point (B) in decimal degrees or vector of DMS [deg arcmin arcsec] (Lat and Long are positive when N and E, and negative when S and W)
-R: Radius of the sphere in m (OPTIONAL) if specified the calculation method ""Orthodrome"" is used (for perfect sphere). If not specified the calculation method from Thaddeus  Vincenty is used for a more accurate result on earth (accuracy: approx. 50m)",dist:   Distance of point A to B in m,"// Distance between Berlin and Tokio when earth is a perfect sphere, Orthodrome method is used for calculation
+R: Radius of the sphere in m (OPTIONAL) if specified the calculation method ""Orthodrome"" is used (for perfect sphere). If not specified the calculation method from Thaddeus  Vincenty is used for a more accurate result on earth (accuracy: approx. 50m)",dist:   Distance of point A to B in m,"// Distance between Berlin and Tokyo when earth is a perfect sphere, Orthodrome method is used for calculation
 [dist] = AT_distSphere(52.517, 13.4, 35.7, 139.767)
 [dist] = AT_distSphere([52 31 0], 13.4, [35 42 0], [139 46 0], %earth.r)
 // Distance between Berlin and Rio de Janeiro on earth (pole flattening incl.) Thaddeus Vincenty method is used for calculation
@@ -64,55 +64,55 @@ refr:  terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not commit
 hrz: distance to the horizon in m","[hiddenHeight, distHorizon] = AT_earthCurveHeight(1.6, 50000, 1.13)",DEPRECATED: Use AT_curveHeight() instead.
 AT_escSpeed,Escape speed from an non-rotating massive body at a certain height,"m:    Mass of the body in kg (e.g. planet), 
 r:    Radius of the body in m (e.g. radius of a planet), 
-h:    Heigth of the object above the body in m (e.g. height of an artificial satellite)",v:    Escape velocity in m/s,"AT_astroconst(); 
+h:    Height of the object above the body in m (e.g. height of an artificial satellite)",v:    Escape velocity in m/s,"AT_astroconst(); 
 AT_escSpeed(%earth.mass, %earth.r, 0) // escape vel. from the earth @sea level",Calculates minimum speed needed for an object to escape from a massive body from a definite height. But rotating of the body is unconsidered.
 AT_exitPupil,Exit pupil of an eye piece,"lens_dia    : lens diameter in m(mm), 
 lens_foclen : lens focal length in m(mm)",exitPupil   = exit pupil of the eye piece in question m(mm),"AT_exitPupil(150, 1200, 25)",
 AT_falltime,Calculates the fall time of a body at a particular height in vacuum,"h: Height in m
-a: Acceleration in m/s^2 (optional), if not specified a = 9.80665",t: fall time in s,,Calculate the fall time of a body at a particular height with a particular gavity/accelleration w/o air resistance (vacuum)
+a: Acceleration in m/s^2 (optional), if not specified a = 9.80665",t: fall time in s,,Calculate the fall time of a body at a particular height with a particular gravity/acceleration w/o air resistance (vacuum)
 AT_fallvelo,Fall velocity,"h : Height in m,
 A : Acceleration in m/s^2 (optional), if not specified a : 9.80665",v: fall velocity in m/s,AT_fallvelo(40000),
 AT_getBodyPosECI,Get the celestial body positions in ECI frame,"bname:   Name of the celestial body, 
 cjd:     TREF time scale
-Available bodies are: ""Mercury"", ""Venus"", ""Earth-Moon-bary"" (or ""EMB""), ""Mars"", ""Jupiter"", ""Saturn"", ""Uranus"", ""Neptune"", ""Pluto"", ""Moon"", ""Sun"", ""Earth"", ""solar-sys-bary"" (or ""SSB"")",pos_ECI: Position of the body (bname) for the origin body (origin) in ICRS frame,"pos_ECI] = AT_getBodyPos(""Mars"", CL_dat_cal2cjd(2018,04,19,20,0,0))",Get the positions of a celestial body in Earth-centered inertial (ECI) frame using JPL's DE405 ephemerides.Src: http://www.bernd.ragutt.de/himmelsmechanik/sonnemondplaneten/
+Available bodies are: ""Mercury"", ""Venus"", ""Earth-Moon-bary"" (or ""EMB""), ""Mars"", ""Jupiter"", ""Saturn"", ""Uranus"", ""Neptune"", ""Pluto"", ""Moon"", ""Sun"", ""Earth"", ""solar-sys-bary"" (or ""SSB"")",pos_ECI: Position of the body (bname) for the origin body (origin) in ICRS frame,"pos_ECI] = AT_getBodyPos(""Mars"", CL_dat_cal2cjd(2018,04,19,20,0,0))",Get the positions of a celestial body in Earth-centered inertial (ECI) frame using JPL's DE405 ephemerides. Src: http://www.bernd.ragutt.de/himmelsmechanik/sonnemondplaneten/
 AT_gravity,Gravity effected on an object above a massive body,"m : Mass of the body in kg, 
 r : Radius of the body in m, 
 h : Height above the body in m",,"AT_astroconst(); AT_gravity(%earth.mass, %earth.r, 400000) // Gravity @ISS",
 AT_isAstroconst,Checks if constants from AT-astroconst() are available,"noErrMsg:  Boolean who specifies if a error message should be displayed or not:
-                 %F or 0: error message will be dispayed if neccessary (standard)
+                 %F or 0: error message will be displayed if necessary (standard)
                  %T or 1: no error message, just output argument","res:       %T if AT_astroconst() was called, %F if not","res = AT_isAstroconst()
 res = AT_isAstroconst(%T) // suppress error message
-Res = AT_isAstroconst(1)  // suppress error message","Checks if function AT_astroconst() was called which provide serveral natural, material and object constants, as radius of the earth etc. The constants are available as structs, e.g. %earth.r is the mean radius of the earth
-This function is used to check for the existance of these constants before usage."
+Res = AT_isAstroconst(1)  // suppress error message","Checks if function AT_astroconst() was called which provide several natural, material and object constants, as radius of the earth etc. The constants are available as structs, e.g. %earth.r is the mean radius of the earth
+This function is used to check for the existence of these constants before usage."
 AT_isCelestlab,Checks if CelestLab toolbox is installed and loaded,"noErrMsg:  Boolean who specifies if a error message should be displayed or not:
-   %F or 0: error message will be dispayed if neccessary (standard)
+   %F or 0: error message will be displayed if necessary (standard)
    %T or 1: no error message, just output argument",,"celestlab = AT_isCelestlab()
 celestlab = AT_isCelestlab(%T)
-Celestlab = AT_isCelestlab(1)",AstroTools make sometimes use of functions from CNES' CelestLab toolbox. This function checks if it is installed and loaded. If Celestlab is present it returns TRUE otherwise FALSE. If FALSE it displays an errior message. When the argument noErrMsg is specified as TRUE the error message is suppressed. 
+Celestlab = AT_isCelestlab(1)",AstroTools make sometimes use of functions from CNES' CelestLab toolbox. This function checks if it is installed and loaded. If Celestlab is present it returns TRUE otherwise FALSE. If FALSE it displays an error message. When the argument noErrMsg is specified as TRUE the error message is suppressed. 
 AT_isLeapYear,Calculates whether the committed year is a leap year or not.,year:    is the four-digit number of the year in question.,leapYear : is a boolean which is TRUE if year is a leap year and FALSE if not.,AT_isLeapYear(2016),
-AT_orbitalspeed,Orbital speed of an object orbitting a body at a particular distance,"r : distance at which the speed is to be calculated in m, 
+AT_orbitalspeed,Orbital speed of an object orbiting a body at a particular distance,"r : distance at which the speed is to be calculated in m, 
 a : length of the semi-major axis of the elliptical orbit. For the Earth at perihelion in m (optional)
 M : Mass of the heavier object in kg, 
 m: Mass of the lighter object in kg (optional)",v: orbital speed in m/s,"AT_astroconst(); 
 AT_orbitalspeed(%earth.r + 4e5, %earth.mass) // Orbital speed of ISS (circular orbit); 
-AT_orbitalspeed(%earth.per, %earth.dist, %sun.mass, %earth.mass) // Orbital speed of the earth @perihelion (elliptical orbit)","Calculate the oribital speed of an object (e.g. satellite) orbitting a massive body (planet) at a particular height.
-The mass (m) of the lighter object can be omitted if the differenz to the heavier one is huge.
+AT_orbitalspeed(%earth.per, %earth.dist, %sun.mass, %earth.mass) // Orbital speed of the earth @perihelion (elliptical orbit)","Calculate the orbital speed of an object (e.g. satellite) orbiting a massive body (planet) at a particular height.
+The mass (m) of the lighter object can be omitted if the difference to the heavier one is huge.
 On circular orbits a is equal to r."
 AT_realSize,Calculates the real size of an object in the distance from the apparent size,"app_size: Apparent size of the object in the distant in degree, 
 dist:     Distance from the observer to the object in arbitrary unit",obj_size: Real size of the object in the same unit used for dist,"obj_size = AT_realSize(0.19, 31e6) // Real size of galaxy M51 in ly",
-AT_refraction_add,Atmospheric refraction of an apparent altitude,"h_s: apparent altitude of the astronomical body in Â°, 
-t:   temperatur in K (OPTIONAL), if not specified t=283K, 
+AT_refraction_add,Atmospheric refraction of an apparent altitude,"h_s: apparent altitude of the astronomical body in deg, 
+t:   temperature in K (OPTIONAL), if not specified t=283K, 
 p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R:   Atmospheric refraction correction in degree,AT_refraction_add(25),You have to add the value to a calculated/real altitude to get the the observed altitude
 AT_refraction_del,Atmospheric refraction elimination of an observed altitude,"h_o: observed altitude of the astronomical body in degrees, 
-t:   temperatur in K (OPTIONAL), if not specified t=283K, 
-p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R_e: Atmospheric refraction in Â°,AT_refraction_del(25),"You have to substract the value to a observed altitude to get the
+t:   temperature in K (OPTIONAL), if not specified t=283K, 
+p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa",R_e: Atmospheric refraction in deg,AT_refraction_del(25),"You have to subtract the value to a observed altitude to get the
  real altitude w/o atmospheric influence."
-AT_resolution,Angular resolution of an optic (telescope),ap: aperature in m,"res_r: resolution of red light (lamda=656nm) in degree, 
-res_g: resolution of green light (lamda=555nm) in degree, 
-res_b: resolution of blue light (lamda=400nm) in degree","[red, green, blue] = AT_resolution(0.15) // 150mm aperature","Calculates the angular resolution of an optic (telescope) for three wave length of light (red=656nm, green=555nm, blue=400nm) in degree (Â°). The results are valid for an perfect optic and sky. Getting a more realistic result by multiplicate the results with 1.22."
-AT_schwarzschild,Calculates the Schwarzschild radius of non-rotating objects,m: Mass of the object in kg,sr: Schwarzschild radius of the object,sr = AT_schwarzschild(%sun.mass) // Schwarzschild radius of the sun,Calculates the radius to which an object has to be comprimised that the escape speed is light speed (black holes). THIS FUNCTION IS VAILD FOR NON-ROTATION OBJECTS ONLY! This is equal to the event horizon in this case.
+AT_resolution,Angular resolution of an optic (telescope),ap: aperture in m,"res_r: resolution of red light (lambda=656nm) in degree, 
+res_g: resolution of green light (lambda=555nm) in degree, 
+res_b: resolution of blue light (lambda=400nm) in degree","[red, green, blue] = AT_resolution(0.15) // 150mm aperture","Calculates the angular resolution of an optic (telescope) for three wave length of light (red=656nm, green=555nm, blue=400nm) in degree. The results are valid for an perfect optic and sky. Getting a more realistic result by multiply the results with 1.22."
+AT_schwarzschild,Calculates the Schwarzschild radius of non-rotating objects,m: Mass of the object in kg,sr: Schwarzschild radius of the object,sr = AT_schwarzschild(%sun.mass) // Schwarzschild radius of the sun,Calculates the radius to which an object has to be compressed that the escape speed is light speed (black holes). THIS FUNCTION IS VALID FOR NON-ROTATION OBJECTS ONLY! This is equal to the event horizon in this case.
 AT_visualRange,Maximum visual range on a spherical body,"height1 : height of eye/instrument in m, 
 height2 : height of distant object in m, 
 r: Radius of spherical body in m, e.g. planet (OPTIONAL), set to the mean radius of earth if not committed
-refr : terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",range = maximium visual range of sight in m,"AT_astroconst(); 
-range = AT_visualRange(1.5, 100, %earth.r, 1.13) // The top of an object of 100m height can be observed by an observer with a eye level of 1.5m to a distance of approx. 45.3km when a terrestrial refraction of 13% is taken into account.",Calculates to which distance the top of an object of a specific height can be observed on a speherical body by an observer of an itself specific height.
+refr : terrestrial refraction (OPTIONAL), set to 1 (no refraction) if not committed, refr = 1.13 is common value.",range = maximum visual range of sight in m,"AT_astroconst(); 
+range = AT_visualRange(1.5, 100, %earth.r, 1.13) // The top of an object of 100m height can be observed by an observer with a eye level of 1.5m to a distance of approx. 45.3km when a terrestrial refraction of 13% is taken into account.",Calculates to which distance the top of an object of a specific height can be observed on a spherical body by an observer of an itself specific height.
