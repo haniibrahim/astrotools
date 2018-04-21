@@ -6,10 +6,10 @@ function [res_r, res_g, res_b] = AT_resolution(ap)
     // [res_r, res_g, res_b] = AT_resolution(ap)
     //
     // PARAMETERS
-    // ap:    aperature in m
-    // res_r: resolution of red light (lamda=656nm) in grad(°)
-    // res_g: resolution of green light (lamda=555nm) in grad(°)
-    // res_b: resolution of blue light (lamda=400nm) in grad(°)
+    // ap:    aperture in m
+    // res_r: resolution of red light (lambda=656nm) in grad(°)
+    // res_g: resolution of green light (lambda=555nm) in grad(°)
+    // res_b: resolution of blue light (lambda=400nm) in grad(°)
     //
     // DESCRIPTION
     // Calculates the angular resolution of an optic (telescope) for
@@ -17,10 +17,10 @@ function [res_r, res_g, res_b] = AT_resolution(ap)
     // in grad (°).
     //
     // The results are valid for an perfect optic and sky. Getting a
-    // more realistic result by multiplicate the results with 1.22. 
+    // more realistic result by multiply the results with 1.22. 
     //
     // EXAMPLES
-    // [red, green, blue] = AT_resolution(0.15) // 150mm aperature
+    // [red, green, blue] = AT_resolution(0.15) // 150mm aperture
     // blue  = 0.0001528 // => 0.55"
     // green = 0.0002120 // => 0,76"
     // red   = 0.0002506 // => 0.90"

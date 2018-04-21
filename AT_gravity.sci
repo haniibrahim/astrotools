@@ -8,7 +8,7 @@ function  [grav] = AT_gravity(m, r, h)
     // PARAMETERS
     // m:    Mass of the massive body in kg (e.g. planet)
     // r:    Radius of the body in m (e.g. radius of a planet)
-    // h:    Heigth of the object above the body in m (e.g. height of an 
+    // h:    Height of the object above the body in m (e.g. height of an 
     //       artificial satellite)
     // grav: Gravity effected on the object in m/s^2
     //

@@ -7,7 +7,7 @@ function [v] = AT_escSpeed(m,r,h)
     // PARAMETERS
     // m:    Mass of the body in kg (e.g. planet)
     // r:    Radius of the body in m (e.g. radius of a planet)
-    // h:    Heigth of the object above the body in m (e.g. height of an 
+    // h:    Height of the object above the body in m (e.g. height of an 
     //       artificial satellite)
     // v:    Escape velocity in m/s
     //

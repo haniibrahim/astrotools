@@ -36,7 +36,7 @@ day  : day as a number (1 .. 31),
 h: hour (0..23), 
 m: minute (0..59), 
 s: second (0..59)","AT_currentday2date(64, 2016)","The current day starts with 1  => Jan., 1st = 1; Dec., 31st = 365 (normal year), 366 (leap year)"
-AT_curveHeight,"Calculates how much a distant object is obscured by a sphere’s curvature (e.g. earth, moon, etc.)","h0:   Eye level in m
+AT_curveHeight,"Calculates how much a distant object is obscured by a sphereâ€™s curvature (e.g. earth, moon, etc.)","h0:   Eye level in m
 dist: Object distance in m
 refr: Terrestrial refraction (OPTIONAL), 1.13 is common 
 r:    Radius of the sphere (OPTIONAL)

@@ -29,7 +29,7 @@ function AT_astroconst(silence)
     // [body].area_lnd  Surface area land in m^2
     // [body].area_h2o  Surface area water in m^2
     // [body].aph       Aphelion in m
-    // [body].per       Pherihelion in m
+    // [body].per       Perihelion in m
     // [body].xxx       more ...
     //
     // Not all constants are available for all bodies.
@@ -69,7 +69,7 @@ function AT_astroconst(silence)
     %sun = struct (..
     "mass", 1.9884e30, ..   // Mass in kg
     "mass_diff", 2e26, ..   // fluctuating mass in kg => %sun.mass +/- %sun.mass_diff
-    "vol", 1.41e27, ..      // Volume im m^3
+    "vol", 1.41e27, ..      // Volume in m^3
     "r", 696342e3, ..       // Mean radius in m
     "obla", CL_dataGet("body.Sun.obla"), .. // Oblateness
     "g", 274, ..            // Mean gravity on surface in m/s^2
@@ -92,7 +92,7 @@ function AT_astroconst(silence)
     "area_lnd",1.48940e11,.. // Surface area land in m^2
     "area_h2o",3.61132e11,.. // Surface area water in m^2
     "aph", 1.52100e11, ..    // Aphelion in m
-    "per", 1.47095e11, ..    // Pherihelion in m 
+    "per", 1.47095e11, ..    // Perihelion in m 
     "dist", CL_dataGet("au"), ..  // Mean distance from the sun in m
     "", 0 .. 
     );
@@ -111,7 +111,7 @@ function AT_astroconst(silence)
     "area", 37932330e6, ..   // Surface area in m^2
     "dist", 384.4e6, ..      // Distance (Semi-major axis)
     "aph", 405.5e6, ..       // Aphelion in m
-    "per", 363.3e6, ..       // Pherihelion in m 
+    "per", 363.3e6, ..       // Perihelion in m 
     "period_synod", 2551442.9, .. // Synodic period in s
     "period_orbit", 2360587.1, .. // Orbital period in s
     "", 0 .. 
@@ -119,7 +119,7 @@ function AT_astroconst(silence)
     //General constants
     %gen = struct( ..
     "G", CL_dataGet("gravCst"), .. // Gravity constant in m^3/(kg * s^2) or in Nm^2/kg^2
-    "c", CL_dataGet("lightSpeed"), .. // lightspeed in vacuum in m/s
+    "c", CL_dataGet("lightSpeed"), .. // speed of light in vacuum in m/s
     "AE", %earth.dist, ..    // Astronomic unit
     "R", 8.3144598, ..      // Universal gas constant in J/(mol*K)
     "R_air", 287.0578987, ..// Special gas constant for dry air in J/(kg*K)

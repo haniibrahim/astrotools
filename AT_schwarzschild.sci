@@ -10,7 +10,7 @@ function [sr] = AT_schwarzschild(m)
     // sr: Schwarzschild radius of the object
     //
     // DESCRIPTION
-    // Calculates the radius to which an object has to be comprimised
+    // Calculates the radius to which an object has to be compressed
     // that the escape speed is light speed (black holes). 
     // THIS FUNCTION IS VAILD FOR NON-ROTATION OBJECTS ONLY!
     // This is equal to the event horizon in this case.

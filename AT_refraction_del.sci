@@ -8,19 +8,19 @@ function [R_e] = AT_refraction_del(h_o, t, p)
     //
     // PARAMETERS
     // h_o: observed altitude of the astronomical body in °
-    // t:   temperatur in K (OPTIONAL), if not specified t=283K
+    // t:   temperature in K (OPTIONAL), if not specified t=283K
     // p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa
     // R:   Atmospheric refraction in °
     //
     // DESCRIPTION
     // Atmospheric refraction from an observed altitude of 
-    // an astronomical body. Used to elimate the refraction and get the
+    // an astronomical body. Used to eliminate the refraction and get the
     // real altitude w/o atmospheric influence.
     //
-    // To get the real altitude you have to substract R_e from your
+    // To get the real altitude you have to subtract R_e from your
     // observed altitude.
     //
-    // Formular by G.G. Bennett from Meeus, Astronomical Algorithm SE,1998
+    // Formula by G.G. Bennett from Meeus, Astronomical Algorithm SE,1998
     // for observation at sea level, p=1010hPa,T=283.15K
     //                  1.02                p       283
     // R_e = ------------------------- * ------ * -------

@@ -10,14 +10,14 @@ function [arclen] = AT_circArcLength(tanLen, r)
     // tanLen:   Length of the tangent in m
     // r:        Radius of the sphere in m (OPTIONAL)
     //           If not committed r:=earth's mean radius
-    // arcLen:   Length of the cirular arc "under" the tangent
+    // arcLen:   Length of the circular arc "under" the tangent
     //
     // DESCRIPTION
     // Calculate the length of the circular arc "under" a tangent.
     //
     // Its main purpose is to determine the difference of a distance
     // on a plane in comparison to a sphere (earth). Means, a 1000m
-    // straight distance on a plane is eqzual to 999.99999m on a sphere
+    // straight distance on a plane is equal to 999.99999m on a sphere
     // (circular arc)
     //
     // EXAMPLES

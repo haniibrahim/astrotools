@@ -18,7 +18,7 @@ function [F] = AT_centrifugal(m, r, v, o)
     //
     // DESCRIPTION
     // Calculates the centrifugal force for an given track OR angular speed.
-    // (Make use of key=value paramezer commitment)
+    // (Make use of key=value parameter commitment)
     //
     // EXAMPLES
     // AT_astroconst();

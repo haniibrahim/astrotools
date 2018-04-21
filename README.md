@@ -45,7 +45,7 @@ Execute the `init.sce` script before you start calculating or after `clear()`. T
 
 **IMPORTANT NOTE:** Use Scilab 5.5.2 instead of version 6.0.0. The current Celestlab 3.2.1 is _not compatible_ with Scilab 6!
 
-## Licence
+## License
 
 These scripts are free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

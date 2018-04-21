@@ -13,6 +13,6 @@ function AT_checkCelestlab()
     // error message is displayed and terminates the script or function.
     //
     if ~AT_isCelestlab() then 
-        error("Celestlab toolbox ist not present. Type: atomInstall(""celestlab"") while conntected to the internet");
+        error("Celestlab toolbox is not present. Type: atomInstall(""celestlab"") while connected to the internet");
     end
 endfunction

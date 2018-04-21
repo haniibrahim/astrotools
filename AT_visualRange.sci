@@ -17,7 +17,7 @@ function [range] = AT_visualRange(height1, height2, r, refr)
     //          set to 1 (no refraction) if not committed, 
     //          refr = 1.13 is common value.
     // range = visual range of sight in m
-    // (height1 and height2 are interchangable)
+    // (height1 and height2 are interchangeable)
     //
     // DESCRIPTION
     // Calculates to which max. distance the top of an object of a specific height 

@@ -1,6 +1,6 @@
 function [U] = AT_circumLat(lat, r)
     //
-    // Calculates the cirumference of a sphere at a certain latitude
+    // Calculates the circumference of a sphere at a certain latitude
     //
     // CALLING SEQUENCES
     // [U] = AT_circumLat(lat, r)
@@ -13,12 +13,12 @@ function [U] = AT_circumLat(lat, r)
     // U:   Circumference of the sphere with the radius "r" at latitude "lat"
     // 
     // DESCRIPTION
-    // Calculate the circumfence of a sphere at a certain latitude. E.g. to 
-    // get the circumfence of the earth at your home town to calculate the local
+    // Calculate the circumference of a sphere at a certain latitude. E.g. to 
+    // get the circumference of the earth at your home town to calculate the local
     // orbital speed
     //
     // EXAMPLES
-    // U = AT_circumLat(52.5) // Circumfence of the earth at Berlin, Germany
+    // U = AT_circumLat(52.5) // Circumference of the earth at Berlin, Germany
     // U = AT_circumLat(52.5, %earth.r) // the same as above
     //
     inarg = argn(2);

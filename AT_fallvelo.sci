@@ -1,6 +1,6 @@
 function [v] = AT_fallvelo(h, a)
     //
-    // Calculates the fall velocity of a body at a particular height in vaccum
+    // Calculates the fall velocity of a body at a particular height in vacuum
     //
     // CALLING SEQUENCES
     // v = AT_fallvelo(h, a)
@@ -13,7 +13,7 @@ function [v] = AT_fallvelo(h, a)
     //
     // DESCRIPTION
     // Calculate the fall velocity of a body at a particular height with
-    // a particular gavity/accelleration w/o air resistance
+    // a particular gravity/acceleration w/o air resistance
     //
     inarg = argn(2);
     if inarg > 2 | inarg < 1 then error(39); end

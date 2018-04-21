@@ -11,7 +11,7 @@ function [U]=AT_circumEllipse(aph, per)
     // U:   circumference of ellipse in m
     //
     // DESCRIPTION
-    // Calculate the circumfence of an ellipse (elliptical orbit) by
+    // Calculate the circumference of an ellipse (elliptical orbit) by
     // passing the distances of the least and the greatest points in 
     // the orbit corresponding to Ramanujan approximation.
     // Src: https://www.mathematik.ch/anwendungenmath/ellipsenumfang/

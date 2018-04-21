@@ -9,7 +9,7 @@ function celestlab = AT_isCelestlab(noErrMsg)
     // PARAMETERS
     // noErrMsg:  Boolean who specifies if a error message should be displayed
     //            or not:
-    //            %F or 0: error message will be dispayed if neccessary (standard)
+    //            %F or 0: error message will be displayed if necessary (standard)
     //            %T or 1: no error message, just output argument
     // celestlab: %T if CelestLab toolbox is available, %F if not
     //
@@ -17,7 +17,7 @@ function celestlab = AT_isCelestlab(noErrMsg)
     // AstroTools make sometimes use of functions from CNES' CelestLab
     // toolbox. This function checks if it is installed and loaded. If
     // Celestlab is present it returns TRUE otherwise FALSE. If FALSE it
-    // displays an errior message. When the argument noErrMsg is specified 
+    // displays an error message. When the argument noErrMsg is specified 
     // as TRUE the error message is suppressed. 
     //
     // EXAMPLES

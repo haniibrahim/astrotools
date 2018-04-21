@@ -1,6 +1,6 @@
 function [v] = AT_orbitalspeed(r, varargin)
     //
-    // Orbital speed of an object orbitting a body at a particular height
+    // Orbital speed of an object orbiting a body at a particular height
     //
     // CALLING SEQUENCES
     // v = AT_orbitalspeed(r, a, M, m)
@@ -18,10 +18,10 @@ function [v] = AT_orbitalspeed(r, varargin)
     //
     // DESCRIPTION
     // Calculate the orbital speed of an object (e.g. satellite) 
-    // orbitting a massive body (planet) at a particular height.
+    // orbiting a massive body (planet) at a particular height.
     //
     // The mass (m) of the lighter object can be omitted if the 
-    // differenz to the heavier one is huge.
+    // difference to the heavier one is huge.
     //
     // On circular orbits a is equal to r.
     //

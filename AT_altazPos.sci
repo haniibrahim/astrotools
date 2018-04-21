@@ -7,7 +7,7 @@ function [az,alt] = AT_altazPos(cjd, loc, bname)
     // [alt,az]=altazPos(cjd,loc,bname)
     //
     // PARAMETERS
-    // cjd:     TREF time scale - Modified (1950.0) julian day 
+    // cjd:     TREF time scale - Modified (1950.0) Julian day 
     // loc:     Row vector of local elliptical (geodetic) coordinates
     //          [longitude; latitude; altitude] in [deg;deg;m]
     // bname:   Name of the celestial body (string, see below)
@@ -19,11 +19,11 @@ function [az,alt] = AT_altazPos(cjd, loc, bname)
     // "Pluto", "Moon", "Sun", "Earth", "solar-sys-bary" (or "SSB")
     //
     // DESCRIPTION
-    // Calculates the alitude and azimuth in degrees of a celestial body
+    // Calculates the altitude and azimuth in degrees of a celestial body
     // (planet of the solar system) using JPL's DE405 ephemerides 
     // viewed from topocentric position on earth. 
     // azimuth: 0° is north, 90° is east, 180° is west, 270° is west
-    // altitude: Angle in degree obove horizon
+    // altitude: Angle in degree above horizon
     // Src: http://www.bernd.ragutt.de/himmelsmechanik/sonnemondplaneten/
     //
     // EXAMPLES
@@ -55,7 +55,7 @@ function [az,alt] = AT_altazPos(cjd, loc, bname)
     // frame in cartesian coordinates
     pos_topoN=M_topoN * (pos_ECF-loc_car);
     
-    // transfor cartesian to spherical (alt-az) coordinates
+    // transfer cartesian to spherical (alt-az) coordinates
     pos_topoN_sph=CL_co_car2sph(pos_topoN);
     
     // return the azimuth and alt (elevation) of bname in deg

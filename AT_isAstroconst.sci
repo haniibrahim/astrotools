@@ -1,6 +1,6 @@
 function res = AT_isAstroconst(noErrMsg)
     //
-    // Checks if constants from AT-astroconst() are available
+    // Checks if constants from AT_astroconst() are adisplayedvailable
     //
     // CALLING SEQUENCES
     // res = AT_isAstroconst()
@@ -9,17 +9,17 @@ function res = AT_isAstroconst(noErrMsg)
     // PARAMETERS
     // noErrMsg:  Boolean who specifies if a error message should be displayed
     //            or not:
-    //            %F or 0: error message will be dispayed if neccessary (standard)
+    //            %F or 0: error message will be displayed if necessary (standard)
     //            %T or 1: no error message, just output argument
     // res:       %T if AT_astroconst() was called, %F if not
     //
     // DESCRIPTION
     // Checks if function AT_astroconst() was called which provide 
-    // serveral natural, material and object constants, as radius of 
+    // several natural, material and object constants, as radius of 
     // the earth etc. The constants are available as structs, e.g. 
     // %earth.r is the mean radius of the %earth.
     //
-    // This function is used to check for the existance of these constants 
+    // This function is used to check for the existence of these constants 
     // before usage.
     //
     // EXAMPLES

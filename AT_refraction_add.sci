@@ -8,7 +8,7 @@ function [R] = AT_refraction_add(h_s, t, p)
     //
     // PARAMETERS
     // h_s: apparent altitude of the astronomical body in °
-    // t:   temperatur in K (OPTIONAL), if not specified t=283K
+    // t:   temperature in K (OPTIONAL), if not specified t=283K
     // p:   pressure in hPa (OPTIONAL), if not specified p=1010hPa
     // R:   Atmospheric refraction correction in °
     //
@@ -19,7 +19,7 @@ function [R] = AT_refraction_add(h_s, t, p)
     // To get the observed altitude you have to add R to your
     // calculated altitude.
     //
-    // Formular by G.G. Bennett from Meeus, Astronomical Algorithm SE,1998
+    // Formula by G.G. Bennett from Meeus, Astronomical Algorithm SE,1998
     // for observation at sea level, p=1010hPa,T=283.15K
     //                 1                  p       283
     // R = ------------------------- * ------ * -------
