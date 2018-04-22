@@ -1,6 +1,6 @@
 function [F] = AT_centrifugal(m, r, v, o)
     //
-    // Centrifugal force from track OR angular speed
+    // Centrifugal force from trajectory OR angular speed
     //
     // CALLING SEQUENCES
     // F = AT_centrifugal(m, r, v)
@@ -17,12 +17,12 @@ function [F] = AT_centrifugal(m, r, v, o)
     // F: Centrifugal force in N
     //
     // DESCRIPTION
-    // Calculates the centrifugal force for an given track OR angular speed.
+    // Calculates the centrifugal force for an given trajectory OR angular speed.
     // (Make use of key=value parameter commitment)
     //
     // EXAMPLES
     // AT_astroconst();
-    // F_cent = AT_centrifugal(80, %earth.r, v=463) // Centrifugal force at earth's equator (track speed used)
+    // F_cent = AT_centrifugal(80, %earth.r, v=463) // Centrifugal force at earth's equator (trajectory speed used)
     // F_cent = AT_centrifugal(80, %earth.r, o=0.00417) // Centrifugal force at earth's equator (angular speed used)
     //
     inarg = argn(2);
