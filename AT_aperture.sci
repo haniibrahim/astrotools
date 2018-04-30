@@ -16,14 +16,17 @@ function [ap_r, ap_g, ap_b] = AT_aperture(res)
     // resolution in degree (°) for three wave length (red=656nm, green=555nm, 
     // blue=400nm) in m.
     //
+    // If you just call AT_aperture(res) you only get the resolution for 
+    // the red light which is the largest of the rgb.
+    //
     // The results are valid for an perfect optic and sky. Getting a
     // more realistic result by multiply the results with 1.22. 
     //
     // EXAMPLES
     // [red, green, blue] = AT_aperture(1/3600) // aperture for 1" resolution
-    // blue  = 0.0825059 // => 83 mm
-    // green = 0.1144770 // => 115 mm
-    // red   = 0.1353097 // => 135 mm
+    // // blue  = 0.0825059 // => 83 mm
+    // // green = 0.1144770 // => 115 mm
+    // // red   = 0.1353097 // => 135 mm
     //
     
     inarg = argn(2);
