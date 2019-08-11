@@ -2,9 +2,9 @@
 
 Astronomy functions for [Scilab](http://www.scilab.org/). Some may based on the [CelestLab](https://atoms.scilab.org/toolboxes/celestlab/)-Toolbox from [CNES](https://cnes.fr/en) (French space agency).
 
-> Developed just for my own needs. Under permanent development. Use it if you find it helpful. No warranty, no service but bug reports welcome. **Use it with Scilab 5.5.2 only.**
+> Developed just for my own needs. Under permanent development. Use it if you find it helpful. No warranty, no service but bug reports welcome. **Developed in Scilab 5.5.2 mainly.** But runs in Scilab 6.0.x, too.
 
-Functions make use of [SI units](https://en.wikipedia.org/wiki/International_System_of_Units "") only.
+Functions make use of [SI units](https://en.wikipedia.org/wiki/International_System_of_Units "") only: m (metre), kg (kilogram), Pa (pascal), J (joule), mol (mole), K (kelvin), radiant for angles, etc.
 
 ## Function's description
 
