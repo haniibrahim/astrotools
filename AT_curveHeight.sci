@@ -11,7 +11,8 @@ function [h1, hrz] = AT_curveHeight(h0, dist, refr, r)
     // PARAMETERS
     // h0:   Eye level in m
     // dist: Object distance in m
-    // refr: Terrestrial refraction (OPTIONAL), 1.13 is common 
+    // refr: Terrestrial refraction (OPTIONAL), 1.13 is common, 
+    //       1 is no refraction
     // r:    Radius of the sphere (OPTIONAL)
     //       if not committed r:=earth's mean radius
     // h1:   Object obscured in m
@@ -32,7 +33,7 @@ function [h1, hrz] = AT_curveHeight(h0, dist, refr, r)
     // of 13% was considered. It is a general form of AT_earthCurveHeight.
     //
     // [hiddenHeight, distHorizon] = AT_curveHeight(1.6, 50000, 1.13)
-    // [hiddenHeight, distHorizon] = AT_curveHeight(1.6, 50000,, %moon.r)
+    // [hiddenHeight, distHorizon] = AT_curveHeight(1.6, 50000, 1, %moon.r)
     //
 
     inarg = argn(2);

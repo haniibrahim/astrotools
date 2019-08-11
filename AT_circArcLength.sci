@@ -33,7 +33,7 @@ function [arclen] = AT_circArcLength(tanLen, r)
     
     // Alpha angle of the right triangle which is spanned via center 
     // of the sphere and the tangent
-    h=AT_curveHeight(0,tanLen,,r);
+    h=AT_curveHeight(0,tanLen,1,r);
     alpha = asin(tanLen ./ (r+h));
     
     // Length of the chord of the 2nd isosceles triangle w/ chord as  

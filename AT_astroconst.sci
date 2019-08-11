@@ -86,7 +86,7 @@ function AT_astroconst(silence)
     "r_pol", 6.3568e6, ..   // Polar radius in m
     "obla", CL_dataGet("obla"), .. // oblateness (WGS84 ellipsoid)
     "g", CL_dataGet("g0"), ..  // Mean gravity in m/s^2
-    "p", 1013.25, ..        // Surface pressure ("sea level") in hPa
+    "p", 101325, ..        // Surface pressure ("sea level") in Pa
     "rho", 5514, ..         // Mean density in kg/m^3
     "area", 5.10072e11, ..  // Surface area in m^2
     "area_lnd",1.48940e11,.. // Surface area land in m^2
@@ -104,9 +104,9 @@ function AT_astroconst(silence)
     "r_eq", 1738.1e3, ..     // Equatorial radius in m
     "r_pol", 1736.0e3, ..    // Polar radius in m
     "g", 1.62 , ..           // Mean gravity in m/s^2
-    "p", 0.3e-11 , ..        // Surface pressure ("sea level") in hPa
-    "p_d", 1e-9 , ..         // Surface pressure at daytime in hPa
-    "p_n", 1e-12 , ..        // Surface pressure at night in hPa
+    "p", 0.3e-9 , ..        // Surface pressure ("sea level") in Pa
+    "p_d", 1e-7 , ..         // Surface pressure at daytime in Pa
+    "p_n", 1e-10 , ..        // Surface pressure at night in Pa
     "rho", 3344, ..          // Mean density in kg/m^3
     "area", 37932330e6, ..   // Surface area in m^2
     "dist", 384.4e6, ..      // Distance (Semi-major axis)
