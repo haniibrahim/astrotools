@@ -35,7 +35,7 @@ function [dist] = AT_distSphere(latA, longA, latB, longB, r)
     // EXAMPLES
     // // Distance between Berlin and Tokyo when earth is a perfect sphere, 
     // // Orthodrome method is used for calculation
-    // [dist] = AT_distSphere(52.517, 13.4, 35.7, 139.767)
+    // [dist] = AT_distSphere(52.517, 13.4, 35.7, 139.767,%earth.r)
     // [dist] = AT_distSphere([52 31 0], 13.4, [35 42 0], [139 46 0], %earth.r)
     // // Distance between Berlin and Rio de Janeiro on earth (pole flattening incl.)
     // // Thaddeus Vincenty method is used for calculation
